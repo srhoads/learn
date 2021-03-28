@@ -4,6 +4,7 @@ This repo has been rendered for the initial purpose of introducing Arend M. W. t
 ## Step 1!
 ### Using `git`!
 - Clone this repository
+- Learn how to read the data: `data/nrg_fng_04022019.f` (hint: file type is of `feather` format)
 - Commit, push, and pull changes!
 
 
