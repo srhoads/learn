@@ -1,0 +1,1305 @@
+. codebook, compact
+
+Variable       Obs Unique      Mean     Min       Max  Label
+---------------------------------------------------------------------------------------------------------
+found         4510      1         1       1         1  case was retrievable in 2012
+occ10         4287    420   4479.09      10      9830  rs census occupation code (2010)
+occindv       4510      2  .9536585       0         1  r's occ/ind verbatim retrieved
+occstatus     4510      3  2.909091       1         3  occ10 coding status
+occtag        4510      1         1       1         1  occ10 coding tag
+prestg10      4287     59  43.53487      16        80  rs occupational prestige score (2010)
+prestg105p~s  4287     92  47.10917       5        97  rs occupational prestige score using threshold ...
+indus10       4284    247  6170.029     170      9870  rs industry code (naics 2007)
+indstatus     4510      3  2.908426       1         3  inusd10 coding status
+indtag        4510      1         1       1         1  indus10 coding tag
+spocc10       2002    342  4451.141      10      9830  spouse census occupation code (2010)
+spoccindv     4510      2  .4478936       0         1  spouse's occ/ind verbatim retrieved
+spoccstatus   4510      3  1.897339       1         3  spocc10 coding status
+spocctag      4510      1         1       1         1  spocc10 coding tag
+sppres10      2002     61  45.20679      16        80  spouse occupational prestige score (2010)
+sppres105p~s  2002     91  50.28272       5        97  spouse occupational prestige score using thresh...
+spind10       2001    232  5989.188     170      9790  spouses industry code (naics 2007)
+spindstatus   4510      3  1.897118       1         3  spind10 coding status
+spindtag      4510      1         1       1         1  spind10 coding tag
+paocc10       2403    327  5026.205      10      9830  fathers census occupation code (2010)
+paoccindv     4510      2  .5416851       0         1  father's occ/ind verbatim retrieved
+paoccstatus   4510      3  2.078492       1         3  paocc10 coding status
+paocctag      4510      1         1       1         1  paocc10 coding tag
+papres10      2403     57  44.15065      18        80  father's occupational prestige score (2010)
+papres105p~s  2403     89  48.71036       6        97  father's occupational prestige score using thre...
+paind10       2406    218  4272.207     170      9870  fathers industry code (2010)
+paindstatus   4510      3  2.079157       1         3  paind10 coding status
+paindtag      4510      1         1       1         1  paind10 coding tag
+maocc10       1820    225  4709.573      10      9830  mothers census occupation code (2010)
+maoccindv     4510      2  .4070953       0         1  mother's occ/ind verbatim retrieved
+maoccstatus   4510      3  1.819069       1         3  maocc10 coding status
+maocctag      4510      1         1       1         1  maocc10 coding tag
+mapres10      1820     56  41.28626      16        80  mother's occupational prestige score (2010)
+mapres105p~s  1820     82  42.33407       5        95  mother's occupational prestige score using thre...
+maind10       1814    188    6448.5     170      9680  mothers industry code (naics 2007)
+maindstatus   4510      3  1.817738       1         3  maind10 coding status
+maindtag      4510      1         1       1         1  maind10 coding tag
+vpsu          4510      2   1.50643       1         2  variance primary sampling unit
+vstrat        4510    149  2064.592    1957      2105  variance stratum
+adults        4510      8   1.86031       1         8  household members 18 yrs and older
+ballot        4510      4  2.672506       1         4  ballot used for interview
+dateintv      4510    149  467.3528     307       807  date of interview
+famgen        4510      7  1.526608       1         7  number of family generations in household
+form          4510      2  1.507761       1         2  form of split questionnaire asked
+formwt        4510      1         1       1         1  weight deal with experimental randomization
+gender1       4510      2  1.431264       1         2  gender of 1st person
+hompop        4510     11   2.48204       1        11  number of persons in household
+id            4510   4510    2255.5       1      4510  respondnt id number
+intage        4510     44  54.03171      22        79  age of interviewer
+intid         4510    179  85.61619       1       179  interviewer id
+intyrs        4510     54  3.747162      .3      19.6  years of service as an interviewer at norc
+mode          4510      2  1.066741       1         2  interview done in-person or over the phone
+oversamp      4510      1         1       1         1  weights for black oversamples
+phase         4510      2  1.193792       1         2  subsampling: two-phase design.
+race          4510      3  1.403104       1         3  race of respondent
+reg16         4510     10  4.353659       0         9  region of residence, age 16
+region        4510      9  5.181153       1         9  region of interview
+relate1       4510      1         1       1         1  relationship of 1st person to household head
+relhh1        4510      1         1       1         1  relationship of person 1 to head of household
+relhhd1       4510      1         1       1         1  relation of 1st person to household head
+respnum       4510      8  1.409091       1        12  number in family of r
+rvisitor      4510      2  1.002439       1         2  is r a visitor?
+sampcode      4510     79  534.9004     501       579  sampling error code
+sample        4510      1         9       9         9  sampling frame and method
+sex           4510      2  1.555876       1         2  respondents sex
+size          4510    140  323.4304       0      8008  size of place in 1000s
+spaneng       4510      2  1.061419       1         2  interviews conducted in spanish or english
+srcbelt       4510      6  4.067184       1         6  src beltcode
+version       4510      7  4.659424       1         7  version of questionnaire
+visitors      4510      5   .013969       0         4  number of visitors in household
+wtss          4510     25   1.00049     .43      5.73  weight variable
+wtssall       4510     25  1.000003   .4297    5.7288  weight variable
+wtssnr        4510    238  1.000029     .36      6.59  weight variable
+xnorcsiz      4510     10  4.413747       1        10  expanded n.o.r.c. size code
+year          4510      1      2006    2006      2006  gss year for this respondent
+hispanic      4508     22  1.592502       1        46  hispanic specified
+rplace        4508      8  1.711624       1         8  r's relationship to household head
+degree        4507      5  1.537164       0         4  rs highest degree
+hefinfo       4507      9   1.42911       1        22  number of hef informant
+wrkstat       4506      8   2.92743       1         8  labor force status
+racecen1      4505     15  2.807991       1        16  what is rs race 1st mention
+marital       4504      5  2.469361       1         5  marital status
+phone         4504      5  3.265986       1         6  does r have telephone
+comprend      4503      3   1.15634       1         3  rs understanding of questions
+coop          4503      4  1.217189       1         4  rs attitude toward interview
+feeused       4503      3  2.022652       1         3  fee given to get case
+hhrace        4503      5  1.454586       1         5  race of household
+lngthinv      4503    169  94.78636      30       200  how long was interview
+educ          4499     21   13.2934       0        20  highest year of school completed
+childs        4497      9  1.898154       0         8  number of children
+ethnum        4496      4  1.752002       1         4  type of response about ethnicity -- r
+age           4492     72  47.14159      18        89  age of respondent
+cohort        4492     72  1958.858    1917      1988  year of birth
+intrace1      4492     11  1.654942       1        16  interviewer s race1
+attend        4491      9  3.568693       0         8  how often r attends religious services
+inthisp       4491     17  2.025161       1        46  is interviewer spanish, hispanic or latino
+hhtype        4490     48  16.01448       1       204  household type
+hhtype1       4490     12  5.159465       1        18  household type (condensed)
+earnrs        4489      7  1.438405       0         6  how many in family earned money
+whoelse6      4487      2  1.297526       1         2  presence of others:no one
+whoelse1      4486      2  1.907936       1         2  presence of others:children under six
+whoelse2      4486      2  1.937138       1         2  presence of others:older children
+whoelse3      4486      2  1.878957       1         2  presence of others:spouse partner
+whoelse4      4486      2  1.969906       1         2  presence of others:other relatives
+whoelse5      4486      2  1.949175       1         2  presence of others:other adults
+partyid       4484      8   2.83207       0         7  political party affiliation
+relig         4484     13  2.174175       1        13  rs religious preference
+teens         4478      6   .188477       0         5  household members 13 thru 17 yrs old
+preteen       4473      7  .2278113       0         6  household members 6 thru 12 yrs old
+babies        4472      5  .1927549       0         4  household members less than 6 yrs old
+reliten       4469      4  2.076975       1         4  strength of affiliation
+dwelling      4467     10  3.223416       1        10  type of structure
+vote04        4461      3  1.394306       1         3  did r vote in 2004 election
+mar1          4451      5  2.280611       1         5  marital status of 1st person
+zodiac        4353     12  6.444062       1        12  respondents astrological sign
+old1          4348     77  48.51012      18        96  age of 1st person
+fund          4334      3  2.006922       1         3  how fundamentalist is r currently
+polviews      4333      7  4.117009       1         7  think of self as liberal or conservative
+income        3873     12  10.95404       1        12  total family income
+income06      3873     25   16.5936       1        25  total family income
+wrkslf        4307      2  1.882052       1         2  r self-emp or works for somebody
+isco681       4270    251  4503.076     110      9996  respondent's occupation, 1980 census
+isco88        4270    228  4641.178     110      9333  respondent's occupation, 1980 census & 1988 isc...
+occ80         4270    379  357.6984       3       889  rs census occupation code (1980)
+prestg80      4270     58  44.16745      17        86  rs occupational prestige score  (1980)
+wrkgovt       4257      2  1.809725       1         2  govt or private employee
+sei           4242    273  49.40959    17.1      97.2  respondent socioeconomic index
+intethn       4223      4  1.374142       1         4  race of interviewer
+intsex        4223      2  1.792801       1         2  sex of interviewer
+indus80       4194    213  602.1781      10       932  rs industry code   (1980)
+eth1          4182     42  17.25753       1        97  1st mentioned country of origin
+trust         3929      3  1.723339       1         3  can people be trusted
+realinc       3873     25  33750.69  284.25  144502.7  family income in constant $
+coninc        3873     25  49841.82     441    178266  family income in constant dollars
+ethnic        3618     42  18.23024       1        97  country of family origin
+health        3516      4  2.033561       1         4  condition of health
+union         3500      4  3.630857       1         4  does r or spouse belong to union
+gender2       3282      2  1.655088       1         2  gender of 2nd person
+relate2       3280      7  3.048476       2         8  relationship of 2nd person to household head
+relhh2        3280     19  6.439329       2        43  relationship of person 2 to head of household
+relhhd2       3280     16  3.132927       2        19  relation of 2nd person to household head
+wksub         3200      2  1.192188       1         2  does r or spouse have supervisor
+wksup         3195      2  1.625978       1         2  does r or spouse supervise anyone
+old2          3180     92  41.25377       0        91  age of 2nd person
+mar2          3131      5   1.91664       1         5  marital status of 2nd person
+widowed       3055      2  1.973813       1         2  ever been widowed
+unrelat       3021      7  .1565707       0         6  number in household not related
+born          2992      2  1.139372       1         2  was r born in this country
+saqsex        2992      3  1.742647       1         4  r did sex module
+weekswrk      2992     52  32.03576       0        52  weeks r. worked last year
+family16      2991      9  1.937479       0         8  living with parents when 16 yrs old
+relig16       2991     12   1.87429       1        12  religion in which raised
+res16         2989      6   3.52827       1         6  type of place lived in when 16 yrs old
+sibs          2988     26  3.759705       0        34  number of brothers and sisters
+parborn       2987      9  1.336793       0         8  were rs parents born in this country
+happy         2986      3  1.822505       1         3  general happiness
+mobile16      2982      3  2.011737       1         3  geographic mobility since age 16
+satfin        2980      3   1.95906       1         3  satisfaction with financial situation
+finalter      2979      3  1.994965       1         3  change in financial situation
+relactiv      2979     10  3.032226       1        10  how often does r take part in relig activities
+relexper      2976      2   1.55914       1         2  turning point in life for religion
+savesoul      2974      2  1.562542       1         2  tried to convince others to accept jesus
+class         2971      4  2.447661       1         4  subjective class identification
+pray          2971      6  2.700101       1         6  how often does r pray
+relpersn      2970      4   2.33165       1         4  r consider self a religious person
+relexp        2967      2  1.583081       1         2  have religious experience changed life
+god           2966      6  5.171612       1         6  rs confidence in the existence of god
+reborn        2966      2  1.627782       1         2  has r ever had a 'born again' experience
+finrela       2961      5  2.850726       1         5  opinion of family income
+sprtprsn      2954      4  2.084631       1         4  r consider self a spiritual person
+rellife       2949      4  2.106816       1         4  try to carry beliefs into other dealings
+pres04        2944      4   1.55197       1         6  vote for kerry, bush, nader
+bible         2943      4  1.875297       1         4  feelings about the bible
+vote00        2930      3  1.509556       1         3  did r vote in 2000 election
+rotapple      2926      4  2.232399       1         4  r agrees immoral person corrupts society
+blkwhite      2925      4  1.802051       1         4  r agrees right & wrong not black & white
+natpark       2920      3  1.723973       1         3  parks and recreation
+rincom06      2669     25  14.47621       1        25  respondents income
+rincome       2669     12  10.30236       1        12  respondents income
+permoral      2903      4  1.967275       1         4  r agrees that morality a personal matter
+incom16       2902      5  2.716402       1         5  rs family income when 16 yrs old
+raclive       2900      2  1.319655       1         2  any opp. race in neighborhood
+natroad       2899      3  1.756468       1         3  highways and bridges
+fund16        2880      3  1.923611       1         3  how fundamentalist was r at age 16
+natsoc        2864      3  1.407472       1         3  social security
+granborn      2853      5  1.241851       0         4  how many grandparents born outside u.s.
+courts        2819      3   2.12735       1         3  courts dealing with criminals
+cappun        2815      2  1.330373       1         2  favor or oppose death penalty for murder
+othlang       2806      2   1.76087       1         2  can r speak language other than english
+punsin        2797      4  2.638899       1         4  r agrees that sinners must be punished
+mawrkgrw      2786      2  1.338837       1         2  mothers employment when r was 16
+natsci        2786      3  1.688442       1         3  supporting scientific research
+disabld1      2784      2  1.938578       1         2  r has a hearing problem
+disabld2      2783      2  1.937478       1         2  r has a vision problem
+disabld3      2782      2  1.826743       1         2  r has a physical disability
+disabld4      2779      2  1.893487       1         2  r has other physical disability
+disabld6      2778      2  1.895968       1         2  r has difficulty in learning remembering or con...
+wwwhr         1791     41  8.909548       0       100  www hours per week
+wwwmin        1791     13  1.900056       0        50  www minutes per week
+disabld5      2777      2  1.943824       1         2  r has emotional or mental disability
+natmass       2777      3  1.656824       1         3  mass transportation
+disabld7      2775      2  1.896216       1         2  r has difficulty in daily activities
+natchld       2758      3  1.517041       1         3  assistance for childcare
+hrs1          2739     80  42.07631       1        89  number of hours worked last week
+stress        2736      5   2.82383       1         5  how often does r find work stressful
+news          2728      5  2.487903       1         5  how often does r read newspaper
+getahead      2726      3  1.429934       1         3  opinion of how people get ahead
+madeg         2715      5  1.039411       0         4  mothers highest degree
+realrinc      2669     25  23539.08  284.25  159292.3  rs income in constant $
+postlife      2629      2  1.171928       1         2  belief in life after death
+maeduc        2625     21  11.26743       0        20  highest year school completed, mother
+conrinc       2669     25  35211.71     441    189740  respondent income in constant dollars
+relsp1        2586      2  2.110596       2         3  relationship of person 1 to spouse of househol
+relsp2        2586      1         1       1         1  relationship of person 2 to spouse of househol
+wksubs        2571      2  3.173862       3         4  does supervisor have supervisor
+divorce       2535      2  1.737673       1         2  ever been divorced or separated
+pawrkslf      2430      2  1.736214       1         2  father self-emp. or worked for somebody
+denom         2411     27  39.39859      10        70  specific denomination
+partners      2400      9    1.0425       0         9  how many sex partners r had in last year
+evcrack       2394      2  1.931495       1         2  r ever use crack cocaine
+evidu         2392      2  1.958194       1         2  r ever inject drugs
+hivtest       2392      2  1.606605       1         2  have you ever been tested for hiv
+evpaidsx      2387      2  1.917051       1         2  ever have sex paid for or being paid since 18
+evstray       2387      3   2.11437       1         3  have sex other than spouse while married
+paisc681      2369    216  5901.629     110      9996  r's father's occupation, 1980 census
+paisco88      2369    198  5546.143     110      9333  r's father's occupation, 1980 census & 1988 isc...
+paocc80       2369    307  449.5922       3       889  fathers census occupation code (1980)
+papres80      2369     56  43.41494      17        86  fathers occupational prestige score (1980)
+partnrs5      2368     10  1.753378       0         9  how many sex partners r had in last 5 years
+padeg         2358      5  1.114928       0         4  fathers highest degree
+paind80       2353    196   410.306      10       932  fathers industry code (1980)
+sexfreq       2333      7  2.633519       0         6  frequency of sex during last year
+pasei         2311    225  46.92713    17.1      97.2  r's father's socioeconomic index
+numwomen      2306     63  9.479185       0       997  number of female sex partners since 18
+condom        2303      2  1.763352       1         2  used condom last time
+relatsex      2303      2  1.099436       1         2  relation to last sex partner
+nummen        2296     47  9.285714       0       997  number of male sex partners since 18
+paeduc        2258     21  11.27591       0        20  highest year school completed, father
+satjob        2177      4  1.677079       1         4  job or housework
+spwrksta      2166      8   2.78578       1         8  spouse labor force status
+feelevel      2160     11  37.90694      10        75  amount of fees paid
+agekdbrn      2148     40  23.87477      13        56  r's age when 1st child born
+partfull      2090      2  1.201435       1         2  was r's work part-time or full-time?
+spwrkslf      2024      2  1.883399       1         2  spouse self-emp. or works for somebody
+hunt          2002      4  3.603397       1         4  does r or spouse hunt
+owngun        2001      3  1.683158       1         3  have gun in home
+pistol        1998      3  1.817317       1         3  pistol or revolver in home
+rifle         1998      3  1.826827       1         3  rifle in home
+shotgun       1998      3  1.824825       1         3  shotgun in home
+spocc80       1998    318  359.3033       3       889  spouse census occupation code (1980)
+sppres80      1998     58  45.49349      17        86  spouses occupational prestige score (1980)
+spisc681      1997    224  4563.168     110      9990  r's spouse's occupation, 1980 census
+spisco88      1997    202  4672.681     110      9333  r's spouse's occupation, 1980 census & 1988 isc...
+closewht      1996      9  6.676854       1         9  how close feel to whites
+fear          1993      2  1.639237       1         2  afraid to walk at night in neighborhood
+closeblk      1992      9  5.742972       1         9  how close feel to blacks
+sexsex5       1992      3  1.916667       1         3  sex of sex partners last five years
+spkath        1991      2   1.21999       1         2  allow anti-religionist to speak
+socommun      1990      7  4.660302       1         7  spend evening with neighbor
+racopen       1989      3  1.774761       1         3  vote on open housing law
+socbar        1989      7  5.741076       1         7  spend evening at bar
+socfrend      1989      7  3.962795       1         7  spend evening with friends
+socrel        1989      7  3.385118       1         7  spend evening with relatives
+dwelown       1987      3  1.354303       1         3  does r own or rent home?
+tvhours       1987     17  2.935581       0        24  hours per day watching tv
+helpful       1985      3  1.660957       1         3  people helpful or looking out for selves
+unemp         1985      2  1.676071       1         2  ever unemployed in last ten yrs
+xmovie        1983      2  1.777105       1         2  seen x-rated movie in last year
+marhomo       1982      5  3.360242       1         5  homosexuals should have right to marry
+marwht        1982      5  2.015136       1         5  r favor close relative marrying white person
+marhisp       1981      5  2.713276       1         5  close relative marry hispanic
+aged          1979      3  1.742799       1         3  should aged live with their children
+fair          1979      3  1.724608       1         3  people fair or try to take advantage
+goodlife      1979      5  2.308742       1         5  standard of living of r will improve
+marblk        1979      5  2.899949       1         5  close relative marry black
+coneduc       1978      3   1.88271       1         3  confidence in education
+marasian      1978      5  2.759353       1         5  close relative marry asian
+meovrwrk      1977      5  2.596358       1         5  men hurt family when focus on work too much
+spsei         1977    244  50.98771    17.1      97.2  r's spouse's socioeconomic index
+spkrac        1976      2  1.374494       1         2  allow racist to speak
+liveblks      1975      5  2.912405       1         5  neighborhood half black
+livewhts      1975      5  2.416709       1         5  r favors living in half white neighborhood
+xmarsex       1975      4  1.296709       1         4  sex with person other than spouse
+life          1974      3  1.553191       1         3  is life exciting or dull
+conmedic      1973      3  1.715155       1         3  confidence in medicine
+suicide2      1973      2  1.909782       1         2  suicide if bankrupt
+fechld        1972      4   2.14858       1         4  mother working doesnt hurt children
+libath        1972      2  1.736308       1         2  allow anti-religious book in library
+spind80       1971    204  581.7834      10       951  spouses industry code (1980)
+spanking      1970      4  2.079188       1         4  favor spanking to discipline child
+fefam         1968      4   2.73374       1         4  better for man to work, woman tend home
+fepresch      1968      4  2.618394       1         4  preschool kids suffer if mother works
+librac        1968      2   1.66311       1         2  allow racists book in library
+spkmil        1968      2  1.330285       1         2  allow militarist to speak
+pornlaw       1967      3  1.640061       1         3  feelings about pornography laws
+teensex       1967      4  1.439248       1         4  sex before marriage -- teens 14-16
+wrkwayup      1967      5   2.04423       1         5  blacks overcome prejudice without favors
+contv         1966      3  2.319939       1         3  confidence in television
+libhomo       1966      2  1.760427       1         2  allow homosexuals book in library
+libmil        1966      2   1.69939       1         2  allow militarists book in library
+conpress      1965      3  2.306361       1         3  confidence in press
+helpsick      1964      5  2.354888       1         5  should govt help pay for medical care?
+parsol        1964      5  2.151731       1         5  rs living standard compared to parents
+suicide3      1964      2  1.912424       1         2  suicide if dishonored family
+gunlaw        1963      2  1.201223       1         2  favor or oppose gun permits
+sexeduc       1962      2  1.106524       1         2  sex education in public schools
+spkcom        1962      2  1.317533       1         2  allow communist to speak
+confinan      1961      3  1.839368       1         3  confid in banks & financial institutions
+libcom        1961      2  1.695563       1         2  allow communists book in library
+spkhomo       1961      2  1.166242       1         2  allow homosexual to speak
+helppoor      1958      5  2.865679       1         5  should govt improve standard of living?
+colhomo       1957      2  4.210015       4         5  allow homosexual to teach
+conarmy       1957      3  1.656106       1         3  confidence in military
+eqwlth        1956      7  3.629857       1         7  should govt reduce income differences
+pillok        1956      4  2.405419       1         4  birth control to teenagers 14-16
+chldidel      1951      9  3.117888       0         8  ideal number of children
+colrac        1951      2  4.519733       4         5  allow racist to teach
+polattak      1949      2  1.108261       1         2  citizen attacking policeman with fists
+suicide4      1949      2  1.836839       1         2  suicide if tired of living
+tax           1949      3  1.429964       1         3  rs federal income tax
+colath        1948      2  4.375257       4         5  allow anti-religionist to teach
+helpblk       1948      5  3.477413       1         5  should govt aid blacks?
+kidssol       1948      6  2.689425       1         6  rs kids living standard compared to r
+letin1a       1945      5  3.646787       1         5  number of immigrants nowadays should be
+colmil        1943      2  4.459084       4         5  allow militarist to teach
+wlthwhts      1943      7   3.45754       1         7  rich - poor
+confed        1941      3  2.261206       1         3  confid. in exec branch of fed govt
+abany         1939      2  1.595668       1         2  abortion if woman wants for any reason
+conlegis      1938      3  2.254902       1         3  confidence in congress
+premarsx      1937      4  2.843573       1         4  sex before marriage
+absingle      1936      2  1.598657       1         2  not married
+conbus        1936      3  2.031508       1         3  confidence in major companies
+helpnot       1935      5  2.954005       1         5  should govt do more or less?
+wlthblks      1935      7  4.889406       1         7  rich - poor
+intlwhts      1933      7  4.658044       1         7  unintelligent -intelligent
+racdif3       1933      2  1.545784       1         2  differences due to lack of education
+racdif2       1932      2  1.910455       1         2  differences due to inborn disability
+workwhts      1931      7  3.530295       1         7  hard working - lazy
+conclerg      1930      3  1.969948       1         3  confidence in organized religion
+workblks      1929      7  4.218766       1         7  hard working - lazy
+abpoor        1928      2  1.573651       1         2  low income--cant afford more children
+intlblks      1927      7  4.256357       1         7  unintelligent - intelligent
+abhlth        1925      2  1.121039       1         2  womans health seriously endangered
+abnomore      1925      2  1.575065       1         2  married--wants no more children
+letdie1       1925      2      1.32       1         2  allow incurable patients to die
+polabuse      1923      2  1.929277       1         2  citizen said vulgar or obscene things
+suicide1      1923      2  1.392096       1         2  suicide if incurable disease
+abdefect      1920      2  1.257813       1         2  strong chance of serious defect
+conjudge      1916      3  1.830376       1         3  confid. in united states supreme court
+discaff       1916      3  2.153967       1         3  whites hurt by aff. action
+polmurdr      1916      2  1.877349       1         2  citizen questioned as murder suspect
+abrape        1912      2  1.224372       1         2  pregnant as result of rape
+divlaw        1909      3  2.022001       1         3  divorce laws
+homosex       1908      4  2.174004       1         4  homosexual sex relations
+affrmact      1904      4  3.285189       1         4  favor preference in hiring blacks
+colcom        1903      2  4.631634       4         5  should communist teacher be fired
+racdif1       1902      2  1.638801       1         2  differences due to discrimination
+racdif4       1892      2  1.504757       1         2  differences due to lack of will
+consci        1890      3   1.64709       1         3  confidence in scientific community
+prayer        1890      2  1.578836       1         2  bible prayer in public schools
+conlabor      1878      3  2.183706       1         3  confidence in organized labor
+polhitok      1872      2  1.337607       1         2  ever approve of police striking citizen
+fepol         1870      2  1.771658       1         2  women not suited for politics
+eth2          1867     41  16.13283       1        97  2nd mentioned country of origin
+polescap      1867      2  1.269416       1         2  citizen attempting to escape custody
+astrolgy      1862      2  1.423738       1         2  ever read a horscope or persoanl astrology report
+intrhome      1862      2  1.362513       1         2  internet access in r's home
+colsci        1859      2  1.556751       1         2  r has taken any college-level sci course
+newsfrom      1859     10  3.969338       1        10  main source of information about events in the ...
+uswary        1856      2  1.394397       1         2  expect u.s. in world war in 10 years
+exptext       1854      9   3.26699       1         9  why is it better to test drug this way
+polaryr2      1845      4  2.336585       1         4  intl polar year 07-08:r would read a newspaper ...
+polaryr3      1845      4  2.336043       1         4  intl polar year 07-08:r would read a magazine a...
+polaryr5      1845      4  2.384282       1         4  intl polar year 07-08:r would watch a feature film
+polaryr6      1845      4  2.925203       1         4  intl polar year 07-08:r would read a book
+scifrom       1845     10   3.96477       1        10  main source of information about science and te...
+polaryr4      1844      4  2.619848       1         4  intl polar year 07-08:r would go to museum
+polaryr8      1844      4  3.172993       1         4  intl polar year 07-08:r would attend a live lec...
+polaryr1      1843      4  2.010309       1         4  intl polar year 07-08:r would watch a tv program
+polaryr7      1843      4  2.699946       1         4  intl polar year 07-08:r would visit a web site
+mawrkslf      1841      2  1.888104       1         2  mother self-emp. or worked for somebody
+tvmeltng      1840      4  2.111413       1         4  r would choose tv program about polar ice melting
+tvinuit       1838      4  2.168662       1         4  r would choose tv program about native ppl in t...
+tvoil         1838      4  2.316649       1         4  r would choose tv program about oil drilling in...
+knwgw         1836      5  2.615468       1         5  level of r's information: global warming
+tvbears       1836      4   2.12146       1         4  r would choose tv program about polar bears
+knwforgn      1835      5  2.836512       1         5  level of r's information: foreign policy
+knwpolar      1835      5  2.973297       1         5  level of r's information: the north and south p...
+knwsci        1834      5  2.625954       1         5  level of r's information: science and technology
+nanotech      1834      4  3.288986       1         4  how much r heard about nanotechnology
+knwecon       1832      5  2.866266       1         5  level of r's information: economic policy
+scistudy      1831      3  1.890224       1         3  r has clear understanding of scientific study
+medsci        1830      5  1.203279       1         5  how scientific: medicine
+nextgen       1829      4  1.681247       1         4  science & tech. give more opportunities to next...
+grass         1828      2  1.632385       1         2  should marijuana be made legal
+tvozone       1828      4    2.2407       1         4  r would choose tv program about ozone hole over...
+seeksci       1827     10  3.672687       1        11  probable source of information about scientific...
+localnum      1820      7  2.968132       1         7  number of employees: rs work site
+biosci        1814      5   1.34344       1         5  how scientific: biology
+sealevel      1812      4  1.465784       1         4  effect of global warming:sea level flood coasta...
+toofast       1811      4   2.52899       1         4  science makes our way of life change too fast
+extinct       1808      4  1.866704       1         4  effect of global warming:polar bears become ext...
+inuitway      1808      4  1.757743       1         4  effect of global warming:inuit no longer follow...
+sciimp3       1807      4  1.226342       1         4  how important:conclusion based on solid evidence
+advfront      1806      4  1.791251       1         4  sci rsch is necessary and should be supported b...
+histsci       1805      5  2.873684       1         5  how scientific: history
+comorsci      1803      5  2.506933       1         5  antarctica should be reserved or open
+matesex       1803      2  1.107598       1         2  was 1 of rs partners spouse or regular
+artseals      1801      4  1.800111       1         4  effect of global warming:arctic seals are threa...
+sciimp2       1801      4  1.440311       1         4  how important:having advanced degrees in their ...
+accntsci      1797      5  2.830829       1         5  how scientific: accounting
+sexsex        1796      3  1.912027       1         3  sex of sex partners in last year
+maisc681      1795    159  4375.019     110      9990  r's mother's occupation, 1980 census
+maisco88      1795    144  4948.193     110      9333  r's mother's occupation, 1980 census & 1988 isc...
+maocc80       1795    212  372.4791       5       889  mothers census occupation code (1980)
+mapres80      1795     56   41.6234      17        86  mothers occupational prestige score (1980)
+sciimp6       1794      4  1.913043       1         4  how important:results consistent with common sense
+astrosci      1793      3  2.625209       1         3  astrology is scientific
+engnrsci      1793      5  1.798104       1         5  how scientific: engineering
+econsci       1792      5   2.46596       1         5  how scientific: economics
+caremost      1791      5  3.201005       1         5  most concerned possible effect of global warming
+expdesgn      1790      2  1.824581       1         2  better way to test drug btw control and non-con...
+sciimp7       1788      4  1.369128       1         4  how important:repeating experiment & finding sa...
+hsmath        1787     11  4.384443       0        10  the highest level of math r completed in high s...
+masei         1787    176  44.13548    17.1      97.2  r's mother's socioeconomic index
+sciimp1       1787      4  1.901511       1         4  how important:done by scientists in university ...
+sciimp8       1787      4  1.873531       1         4  how important:research takes place in a laboratory
+noicecap      1784      4  1.561099       1         4  effect of global warming:northern ice cap melt
+sciimp4       1783      4  1.297813       1         4  how important:examining different interpretatio...
+physcsci      1780      5  1.425281       1         5  how scientific: physics
+hsbio         1779      2  1.193929       1         2  r ever took a high school biology course
+hschem        1779      2  1.459809       1         2  r ever took a high school chemistry course
+maind80       1779    169  632.3243      10       932  mothers industry code (1980)
+hsphys        1777      2  1.687676       1         2  r ever took a high school physics course
+sciimp5       1775      4  3.014648       1         4  how important:results consistent with religious...
+pres00        1770      5  1.597175       1         6  vote for gore, bush, nader
+odds1         1765      2  1.904249       1         2  test of knowledge about probablity1
+odds2         1764      2  1.201814       1         2  test of knowledge about probablity2
+leadsci       1750      4     2.504       1         4  shld pay attntn only to theory accepted by lead...
+socsci        1749      5  2.652373       1         5  how scientific: sociology
+scibnfts      1741      3  1.336588       1         3  benefits of sci research outweight harmful results
+relate3       1729      6  3.497397       3         8  relationship of 3rd person to household head
+relhh3        1729     20  25.33892       3        43  relationship of person 3 to head of household
+relhhd3       1729     17  4.955466       3        19  relation of 3rd person to household head
+scispec       1724      4  2.680974       1         4  science is too concerned with theory and specul...
+backpain      1723      2  1.724318       1         2  r had back pain in the past 12 months
+secondwk      1723      2  1.834591       1         2  r has job other than main
+workfor       1723      3  1.429483       1         3  r work for whom
+health1       1722      5  2.328688       1         5  rs health in general
+hurtatwk      1722      8  .2108014       0         7  number of injuries on the job past 12 months
+painarms      1722      2  1.725319       1         2  r had pain in the arms in the past 12 months
+satjob1       1721      4  1.671121       1         4  job satisfaction in general
+usedup        1721      5  2.689134       1         5  how often during past month r felt used up
+hlthdays      1720     21  1.211047       0        30  days of activity limitation past 30 days
+handmove      1719      2  1.515416       1         2  r perform forceful hand movements
+waypaid       1719      3  1.753345       1         3  how paid in main job
+physhlth      1718     23  2.367288       0        30  days of poor physical health past 30 days
+gender3       1717      2  1.475248       1         2  gender of 3rd person
+hvylift       1717      2   1.53873       1         2  r do repeated lifting
+laidoff       1717      2  1.933023       1         2  r was laid off main job last year
+mntlhlth      1717     21         3       0        30  days of poor mental health past 30 days
+wrksched      1717      6  1.827024       1         6  usual work schedule
+learnnew      1716      4  1.763986       1         4  job requires r to learn new things
+famvswk       1715      4  2.994752       1         4  how often fam life interfere job
+wkvsfam       1715      4  2.739942       1         4  how often job interferes fam life
+workdiff      1715      4  1.710787       1         4  r does numerous things on job
+wrkhome       1715      6  2.219242       1         6  how often r works at home
+earthsun      1714      2  1.199533       1         2  sci knowledge:the earth goes around the sun
+wkharsex      1714      2  1.967911       1         2  r sexually harassed on the job last 12 months
+workfast      1714      4  2.170945       1         4  job requires r to work fast
+chngtme       1713      4  2.428488       1         4  how often r allowed change schedule
+famwkoff      1713      4  1.956801       1         4  how hard to take time off
+knowwhat      1713      4  1.666083       1         4  r knows what's expected on job
+myskills      1713      4  1.716871       1         4  job allows r use of skills
+wkageism      1713      2  1.913602       1         2  r feels discriminated because of age
+wkharoth      1713      2  1.911851       1         2  r threatened on the job last 12 months
+wkracism      1713      2  1.952131       1         2  r feels discriminated because of race
+wksexism      1713      2  1.930531       1         2  r feels discriminated because of gender
+yearsjob      1713     50  7.391273     .25        60  time at current job
+lotofsay      1712      4   2.08528       1         4  r has lot of say in job
+wrktype       1712      5  4.305491       1         5  work arrangement at main job
+overwork      1711      4  2.784921       1         4  r has too much work to do well
+partteam      1711      2  1.503214       1         2  r work as part of a team
+wktopsat      1711      4  2.887785       1         4  satisfaction comes from work
+respect       1709      4  1.691633       1         4  r treated with respect at work
+rincblls      1708      2  1.515808       1         2  income alone is enough
+wkdecide      1708      4  1.952576       1         4  how often r take part in decisions
+setthngs      1707      4  1.893966       1         4  how often r set way things done
+toofewwk      1707      4  2.221441       1         4  how often not enough staff
+hrsrelax      1703     21  3.699941       0        24  hours per day r have to relax
+trynewjb      1703      3  2.455079       1         3  how likely r make effort for new job next year
+haveinfo      1702      4  1.518801       1         4  enough info to get the job done
+prodctiv      1701      4  1.894768       1         4  work conditions allow productivity
+wkfreedm      1701      4  1.611993       1         4  a lot of freedom to decide how to do job
+wrktime       1701      4  1.817754       1         4  r has enough time to get the job done
+hlpequip      1699      4  1.752207       1         4  enough help and equip to ge the job done
+wksmooth      1698      4  2.090695       1         4  workplace runs in smooth manner
+emptrain      1696      2  1.509434       1         2  received formal training from employer
+mustwork      1696      2   1.73408       1         2  mandatory to work extra hours
+opdevel       1696      4  1.885024       1         4  opportunity to develop my abilities
+safehlth      1696      4  1.679245       1         4  safety and health condition good at work
+viruses       1693      2  1.603071       1         2  sci knowledge:antiviotics kill viruses as well ...
+jobfind1      1691      3  2.028977       1         3  how easy for r to find a same job
+extrapay      1690      2  1.618935       1         2  eligible for performance based pay
+jobsecok      1690      4  1.657988       1         4  the job security is good
+trustman      1688      4  1.961493       1         4  r trust management at work
+fringeok      1687      4   2.10492       1         4  fringe benefits are good
+trainops      1687      4  1.512745       1         4  r have the training opportunities
+slfmangd      1686      2  1.663108       1         2  r involved in a self-managed team
+cowrkhlp      1685      4  1.627893       1         4  coworkers can be relied on when r needs help
+empinput      1684      2  1.678741       1         2  r involved in any task force for decision-making
+moredays      1684     29  6.087292       0        30  days per month r work extra hours
+wkbonus       1684      3  2.353919       1         3  r is likely to get a bonus or pay increase
+proudemp      1682      4   1.74019       1         4  r proud to work for employer
+safetywk      1682      4  1.657551       1         4  worker safety priority at work
+old3          1678     79  16.30155       0        92  age of 3rd person
+cowrkint      1677      4  1.778175       1         4  coworkers take a personal interest in r
+safefrst      1676      4  1.699284       1         4  no shortcuts on worker safety
+manvsemp      1669      5  2.048532       1         5  relations bw management and employees
+wkpraise      1668      3  1.619305       1         3  r is likely to be praised by supervisor
+teamsafe      1667      4  1.729454       1         4  mgt and employees work together re safety
+fairearn      1666      5  2.581032       1         5  how fair is what r earn on the job
+promteok      1663      4   2.44979       1         4  rs chances for promotion good
+condemnd      1658      4  2.118215       1         4  r free from conflicting demands
+talksup       1641      5  2.344302       0         4  how likely to speak supervisor if coworker not w
+seecowrk      1637     11  7.610874       0        10  how easy to see whether co-workers working
+suphelp       1637      4  1.750764       1         4  supervisor helpful to r in getting job done
+cowrkhrd      1633     11  7.157379       0        10  how hard to say how people work at workplace
+talkemp       1633      4   2.64605       1         4  how likely to talk directly if coworker not work
+supcares      1631      4  1.746168       1         4  supervisor concerned about welfare
+trdunion      1630      4  2.611043       1         4  workers need strong unions
+talkteam      1629      4  2.306323       1         4  if employee not working: talk directly to the e...
+condrift      1627      2  1.100184       1         2  sci knowledge:the continents have been moving
+compwage      1621      5  2.799506       1         5  annual wages in 2005 were higher than same jobs...
+donothng      1621      4  2.159778       1         4  how likely to do nothing if coworker not working
+denom16       1619     27  34.79432      10        70  denomination in which r was raised
+whichsci      1606      4  2.694894       1         4  industry scientists less reliable than universi...
+evolved       1570      2  1.503822       1         2  sci knowledge:human beings developed from animals
+radioact      1561      2  1.827675       1         2  sci knowledge:all  radioactivity is man-made
+numorg        1559    133  4116.681       1      9997  number of people working in organization at all...
+hotcore       1556      2  1.060411       1         2  sci knowledge: the center of earth is very hot
+promtefr      1552      4  2.123711       1         4  promotions are handled fairly
+boyorgrl      1546      2  1.239974       1         2  sci knowledge:father gene decides sex of baby
+vigversn      1523     72  40.76953       1        90  vignette version number
+issp          4510      2  1.663415       1         2  filter for issp cases
+vigvermy      1518     12  6.486825       1        12  vignette version
+evwork        1517      2   1.12327       1         2  ever work as long as one year
+big5a2        1516      5   2.03496       1         5  r see oneself as someone who is sociable
+big5d2        1516      5  3.453166       1         5  r see oneself as someone who gets nervous easily
+worknow       1516      2  1.329815       1         2  are you currently working for pay
+polint        1516      5  2.834433       1         5  your interest in politics.
+big5b2        1515      5  3.433663       1         5  r see oneself as someone who tends to find faul...
+big5c2        1515      5  4.089769       1         5  r see oneself as someone who tends to be lazy
+big5d1        1515      5  2.353795       1         5  r see oneself as someone who is relaxed
+icecaps       1515      3  1.961056       1         3  polar ice caps got larger or smaller over last ...
+big5b1        1514      5  1.891017       1         5  r see oneself as someone who is generally trusted
+big5c1        1514      4  1.549538       1         4  r see oneself as someone who does a thorough job
+peocntct      1514      5  2.924703       1         5  how many people in contact in a typical weekday
+bribe         1513      5  1.193655       1         5  does r see public official asking for a bribe i...
+promotn       1513      5  1.768672       1         5  importance of advancement in a job
+secjob        1513      5  1.496365       1         5  importance of job security in a job
+aidcol        1512      4  1.553571       1         4  gov. should assist low-income college student
+aidold        1512      4  1.546958       1         4  govts resp: provide for the elderly.
+big5e2        1512      5  3.291005       1         5  r see oneself as someone who has few artistic i...
+hiinc         1512      5  1.977513       1         5  importance of high pr income in a job
+youinflu      1512      4  2.070106       1         4  how often r is asked to help influence importan...
+fewtrsty      1511      5  2.153541       1         5  there are only a few people r can trust completely
+hlpoths       1511      5  1.687624       1         5  importance of helping others in a job
+hlpsoc        1511      5  1.669093       1         5  importance of social usefulness in a job
+intjob        1511      5  1.501655       1         5  importance of interesting work in a job
+spschool      1511      5  1.812045       1         5  govt spending on education.
+wrkearn       1511      5  3.436135       1         5  job is just a way to earn money
+wrkindp       1511      5  1.909332       1         5  importance of independent work in a job
+big5e1        1510      5  2.043709       1         5  r see oneself as someone who has an active imag...
+exploit       1510      5  1.947682       1         5  other people take advantage of r if not careful
+hlpinflu      1510      4  1.889404       1         4  does r have people to ask to influence importan...
+makejobs      1510      5  1.812583       1         5  govt create new jobs.
+wrkenjoy      1510      5   2.53245       1         5  enjoy job even if $ not needed
+rachome       1509      2  1.589795       1         2  opp. race home for dinner recently
+obeylaw       1508      2  1.470159       1         2  should people obey laws without exceptn?
+stoprndm      1508      4  2.816313       1         4  should authorities have right to search ppl in ...
+flexhrs       1507      5   2.51294       1         5  importance of flexible hrs. in a job
+poleff13      1507      5  2.467153       1         5  have a pretty good understanding of issues
+poleff15      1507      5  3.033179       1         5  most people better informed about politics than i
+hlthcare      1506      4  1.563081       1         4  govts resp: provide hlth care for sick
+poleff11      1506      5  2.818725       1         5  don't have any say about what the government does
+posslq        1505      4  2.286379       1         4  does r have marital partner
+pricecon      1505      4  1.871761       1         4  govts resp: keep prices under control.
+revpub        1505      4   1.66113       1         4  allow revolutionaries to publish books.
+sphlth        1505      5  1.903654       1         5  govt spending on health.
+big5a1        1504      5  2.660239       1         5  r see oneself as someone who is reserved
+hlphitec      1504      5  1.837766       1         5  govt support for new products and tech.
+jobsall       1504      4  2.703457       1         4  govts resp: provide jobs for all.
+helpcrim      1503      5  3.094478       1         5  how successful is govt:controlling crime
+poleff3       1503      5  3.240186       1         5  avg person can influence politicians.
+protest1      1502      4  1.617177       1         4  allow public meetings protesting govt.
+protest3      1502      4  1.684421       1         4  allow demonstrations protesting govt.
+revspeak      1502      4  1.953395       1         4  allow revolutionary public meetings.
+sppolice      1502      5   2.37217       1         5  govt spending on law enforcement.
+wantjob1      1501      4  1.578947       1         4  which job would you prefer
+cuthours      1500      5  3.113333       1         5  reduction in length of work week.
+savejobs      1500      5  2.269333       1         5  govt support for declining industries.
+tapphone      1500      4  2.473333       1         4  should authorities have right to tap phone conv...
+timefam       1500      5  1.627333       1         5  time r would spend on family
+empself       1499      2  1.620414       1         2  does r prefer self-employment or not ?
+natdisin      1499      2  1.087392       1         2  should helping ppl in natural disaster be govt ...
+poleff16      1499      5  3.560374       1         5  people elected to congress try to keep promises
+jobhour       1498      5  3.995327       1         5  short working hours
+jobinc        1498      5  2.570761       1         5  high income
+jobmeans      1498      5  2.273698       1         5  work important and feel accomplishment
+jobpromo      1498      5  2.718291       1         5  chances for advancement
+jobsec        1498      5  3.441923       1         5  no danger of being fired
+selfemp2      1498      5  2.859146       1         5  being employee interfere more with family life ...
+timeleis      1498      5  2.085447       1         5  time r would spend on leisure
+grnlaws       1497      4  1.456914       1         4  gov resp to to make industry less damaging
+sparms        1497      5  2.847027       1         5  govt spending on defense.
+protest6      1496      4  2.691845       1         4  allow national anti-govt strike.
+spnatdis      1496      5  2.531417       1         5  should govt spend more or less on natural disas...
+timefrnd      1496      5  2.299465       1         5  time r would spend on friends
+helpsec       1495      5  2.840134       1         5  how successful is govt:dealing with america s s...
+selfemp1      1495      5  2.601338       1         5  employee have more job security than the self-e...
+wotrial       1495      4  2.462876       1         4  should authorities have right to detain the sus...
+poleff17      1494      5  3.321285       1         5  most government administrators can be trusted
+helpenv       1493      5  3.121232       1         5  how successful is govt:protecting environment
+knowpols      1493      4  1.655727       1         4  public offical s treatment depends on who they ...
+natdiscm      1493      2  1.107167       1         2  should rebuilding community in disaster be govt...
+databank      1492      4   2.13874       1         4  computer data threat to individl privacy
+aidhouse      1491      4  1.950369       1         4  gov. should provide housing to poor
+spunemp       1489      5  2.674278       1         5  govt spending on unemployment benefits.
+helphlth      1488      5  3.317876       1         5  how successful is govt:providing hlth care for ...
+helpold       1488      5  3.303091       1         5  how successful is govt:decent standard of livin...
+sparts        1488      5  3.077285       1         5  govt spending on culture and the arts.
+spretire      1488      5  2.192204       1         5  govt spending on retirement benefits.
+nateducy      1487      3  1.316745       1         3  education -- version y
+spenviro      1487      5  2.439812       1         5  govt spending on environment.
+aidindus      1484      4   2.02628       1         4  govts resp: assist industrial growth.
+cutgovt       1483      5  2.275792       1         5  cuts in govt spending.
+draft         1481      2  1.839973       1         2  return to the draft?
+nathealy      1481      3  1.359217       1         3  health -- version y
+aidunemp      1480      4   2.45473       1         4  govts resp: provide for the unemployed.
+lessreg       1480      5  2.563514       1         5  less govt regulation of business.
+anomia7       1479      2  1.342799       1         2  officials not interested in average man
+equalize      1477      4   2.40149       1         4  govts resp: reduce income differences.
+helpemp       1477      5  3.116452       1         5  how successful is govt:fighting unemployment
+corrupt1      1476      5  3.312331       1         5  opinion of corruption by politician
+unbetter      1475      5  2.471186       1         5  working condition would be much worse without u...
+polsfair      1474      5  3.006106       1         5  opinion of fariness of public offical s treatment
+unjobsec      1474      5  2.545455       1         5  unions are very important for job security
+natcrimy      1473      3  1.532926       1         3  law enforcement -- verison y
+natfarey      1472      3  1.381793       1         3  assistance to the poor -- version y
+taxmid        1472      5  2.334918       1         5  taxes on middle income people too high
+rank          1471     10  4.491502       1        10  rs self ranking of social position
+numknown      1469      5  2.233492       1         5  variable that drives skips in module
+timehhwk      1466      5  3.223738       1         5  time r would spend on household work
+smallbig      1465      2   1.31058       1         2  r preference re: firm size in
+wealth        1464     14  5.290301       1        15  total wealth of respondent
+corrupt2      1462      5  3.100547       1         5  opinion of corruption by government administrators
+nateduc       1462      3  1.317373       1         3  improving nations education system
+taxpoor       1461      5   2.19165       1         5  taxes on low income people too high
+usintl        1460      2  1.392466       1         2  take active part in world affairs
+privgovt      1458      2  1.307956       1         2  r preference re: privatepublic sector
+verdict       1458      2  1.293553       1         2  worse type of judicial mistake.
+relneg        1457      2  1.610158       1         2  any turning point when less committed to religion
+natenviy      1452      3   1.40427       1         3  the environment -- version y
+nataidy       1451      3  2.581668       1         3  assistance to other countries -- ver y
+natheal       1451      3  1.297726       1         3  improving & protecting nations health
+huntbear      1450      2  1.474483       1         2  true-false:hunting make polar bear extinct than...
+natcrime      1448      3  1.446133       1         3  halting rising crime rate
+natenvir      1446      3  1.375519       1         3  improving & protecting environment
+natarmsy      1445      3  2.097578       1         3  national defense -- version y
+natarms       1442      3  2.144938       1         3  military, armaments, and defense
+natfare       1434      3  2.110879       1         3  welfare
+natdrug       1428      3   1.45028       1         3  dealing with drug addiction
+nataid        1425      3      2.52       1         3  foreign aid
+avoidmh       1419      4  3.739958       1         4  r changed shopping place due to presence of men...
+mhtrtot2      1417      2  1.316161       1         2  r knows someone who received treatment for ment...
+taxrich       1416      5  3.555791       1         5  taxes on high income people too high
+mhseepub      1415      4  2.528622       1         4  how often r sees someone with mental health pro...
+sprel         1414     12  2.147808       1        12  spouses religious preference
+mhproblm      1413      4  1.420382       1         4  how serious x s situation is
+mhtrtoth      1413      2  1.361642       1         2  r personally has known someone who received tre...
+mhtrtslf      1413      2  1.849257       1         2  r have ever personally received treatment for m...
+natspacy      1413      3  2.234961       1         3  space exploration -- version y
+gesttalk      1411      4  2.354359       1         4  how often r see people making strange gesture i...
+hapmar        1410      3  1.415603       1         3  happiness of marriage
+mhhlpgp       1410     10  8.456028       1        10  how important: go to medical doctor for help
+prozac        1410      2  1.107801       1         2  have you ever heard of prozac
+seriousp      1410      4  1.615603       1         4  how serious x s situation is
+mhhlpfam      1408     10  8.453835       1        10  how important: turn to family for help
+mhhlpfrd      1408     10  7.358665       1        10  how important: turn to friends for help
+sphrs1        1408     65  42.29332       1        89  number of hrs spouse worked last week
+mhdoactv      1407      2  1.966596       1         2  what x should do:get involved in other activities
+mhdodiet      1407      2  1.978678       1         2  what x should do:eat better
+mhdodoc       1407      2  1.375977       1         2  what x should do:go to doctor
+mhdoexrc      1407      2  1.973703       1         2  what x should do:start exercising
+mhdofam       1407      2  1.789623       1         2  what x should do:talk to family
+mhdofrgt      1407      2  1.995025       1         2  what x should do:try to forget
+mhdofrnd      1407      2  1.901919       1         2  what x should do:talk to friends
+mhdogrp       1407      2  1.985075       1         2  what x should do:get involved in a group
+mhdoheal      1407      2  1.994314       1         2  what x should do:go to spritual healer
+mhdoherb      1407      2  1.997868       1         2  what x should do:take herbs
+mhdohosp      1407      2  1.975124       1         2  what x should do:check into a hospital
+mhdolife      1407      2  1.954513       1         2  what x should do:change lifestyle
+mhdomhp       1407      2  1.772566       1         2  what x should do:go to counselor
+mhdomove      1407      2  1.993603       1         2  what x should do:move to another location
+mhdonone      1407      2  1.992182       1         2  what x should do:nothing
+mhdootc       1407      2  1.987207       1         2  what x should do:take non-prescription medication
+mhdooth       1407      2  1.930348       1         2  what x should do:other mentions
+mhdopray      1407      2  1.943852       1         2  what x should do:pray
+mhdopsyc      1407      2  1.744847       1         2  what x should do:go to psychiatrist
+mhdorel       1407      2  1.940299       1         2  what x should do:talk to relig leader
+mhdorx        1407      2  1.909026       1         2  what x should do:take prescription medication
+natspac       1407      3  2.237385       1         3  space exploration program
+doc16         1405      5  1.972242       1         5  doctors judgement trusted
+mhimptrt      1405      4   1.46121       1         4  how likely x s situation will improve with trea...
+seemhpub      1405      4  2.303915       1         4  how frequently r sees someone mentally ill in p...
+mhhlppsy      1404     10  7.183761       1        10  how important: go to psychiatrist for help
+mhuneasy      1403      4  3.027798       1         4  being around x would make me feel uncomfortable
+mhhlpmhp      1402     10  7.162625       1        10  how important: go to mental health professional
+mhlosefr      1402      4  2.920827       1         4  x would lose friends if people know his her tre...
+mhoutsdr      1402      4   3.24679       1         4  getting treatment would make x outsider in comm...
+doc18         1401      5  2.060671       1         5  doctor put medical needs above all other
+mhfeelem      1401      4  3.348323       1         4  x should feel embarrassed
+mhfriend      1401      4  1.900071       1         4  r would make friends with x
+mhnotell      1401      4  3.071378       1         4  x should feel afraid to tell about his situation
+mhupdown      1401      4  2.401142       1         4  x is experiencing normal ups-and-downs of life
+spdeg         1401      5  1.635974       0         4  spouses highest degree
+tlkfam        1401      2   1.03783       1         2  x should talk to family and friends
+mhhlprel      1400     10  7.107857       1        10  how important: turn to religious leader
+doc15         1399      5  3.638313       1         5  doctor not really care me as a person
+doc20         1399      5  2.292352       1         5  doctor tell me if a mistake was made
+speduc        1399     21  13.41387       0        20  highest year school completed, spouse
+mhimpown      1398      4  3.043634       1         4  how likely x s situation will improve on its own
+mhslfshm      1398      4  3.454936       1         4  x should be ashamed to receive govt assistance
+mhsocial      1398      4  2.012876       1         4  r would spend time socializing with x
+mhstress      1398      4  1.903433       1         4  x s stuation caused by: stress
+mhgvtjob      1397      4  2.516822       1         4  govt responsibility: provide job for x
+mhillnss      1397      4  2.172513       1         4  x is experiencing mental illness
+mhneihbr      1397      4  1.869721       1         4  r would have x as a neighbor
+doc19         1396      5  2.131089       1         5  doctor a real expert in taking care problem
+mhluck        1396      4  3.318052       1         4  x s stuation caused by: bad luck
+mhnervs       1395      4  2.937634       1         4  being around x would make me feel nervous
+mhwkwith      1395      4  2.226523       1         4  r would work closely with x on a job
+natdrugy      1395      3  1.554122       1         3  drug rehabilitation -- version y
+mhfamshm      1394      4  3.559541       1         4  x family should be ashamed to receive govt assi...
+dangroth      1393      2  1.073223       1         2  x should be admitted to be hospitalized for tre...
+mhphyscl      1393      4  2.059584       1         4  x is experiencing physical illness
+mhchrctr      1392      4  3.082615       1         4  x s stuation caused by: bad character
+mhhired       1392      4  1.820402       1         4  x should be hired like others
+stresses      1392      4  1.724138       1         4  how likely x s stuation caused by stress
+usepsyc1      1391      5  3.452912       1         5  will take medicine because personal trouble
+wordsum       1391     11  6.152408       0        10  number words correct in vocabulary test
+meddoc        1390      2  1.134532       1         2  x should go to general medical doctor for help
+usepsyc3      1390      5  2.885612       1         5  will take medicine because feeling depressed
+dangrslf      1389      2   1.11879       1         2  x should be admitted to be hospitalized for tre...
+mhlessop      1389      4  2.822174       1         4  x s opportunities limited if people know his he...
+mhsecret      1389      4  3.143269       1         4  x s family better off if kept secret
+mhgvtedc      1388      4  1.974063       1         4  govt responsibility: provide financial help for...
+mhseedoc      1388      4  2.852305       1         4  x should be forced to be examined at a clinic b...
+upsdowns      1388      4  2.144813       1         4  how likely x is experiencing normal ups-and-dow...
+usepsyc4      1388      5   2.37464       1         5  will take medicine because intense fear
+mhdecslf      1387      4    2.1615       1         4  how able is x to decide whether to receive trea...
+mhgod         1387      4  3.298486       1         4  x s stuation caused by: god s will
+mhgvthme      1387      4  2.116078       1         4  govt responsibility: provide housing for x
+mhkdcare      1386      4  3.191919       1         4  r would have x care for your children
+mhunsure      1386      4  2.542569       1         4  people like x are unpredictable
+mhaccptd      1385      4  3.231047       1         4  person like x has no hope of being accepted as ...
+charactr      1384      4  2.655347       1         4  how likely x s stuation caused by bad character
+mentloth      1384      2  1.117052       1         2  x should go to other mental health professional...
+mhmeds        1384      4  2.721821       1         4  x should be forced to take prescribed medicatio...
+relsp3        1384     18  26.64595       4        43  relationship of person 3 to spouse of househol
+vigsoc        1384      4   2.33815       1         4  how willing r would spend time socializing with x
+medcare1      1382      5  2.875543       1         5  who r thinks should be most responsible for cos...
+mhgvthlt      1382      4  1.903039       1         4  govt responsibility: provide health care for x
+tlkclrgy      1382      2  1.126628       1         2  x should talk to religious leader
+usepsyc2      1382      5  2.930535       1         5  will take medicine because cant cope w stress
+vigfrnd       1382      4  2.109986       1         4  how willing r would make friends with x
+dectreat      1381      4   2.25706       1         4  how able is x to decide receive treatment
+godswill      1381      4  3.457639       1         4  how likely x s stuation caused by god s will
+mhintl        1380      4  1.781884       1         4  people like x are just as intelligent as anyone...
+mhraised      1380      4  2.891304       1         4  x s stuation caused by: the way raised
+mhmnthsp      1379      4  2.963742       1         4  x should be forced to go to mental hospital by law
+mentlill      1378      4  2.225689       1         4  how likely x is experiencing mental illness
+mhgenes       1377      4  2.186638       1         4  x s stuation caused by: genetic problem
+mhhrdtlk      1377      4  2.718228       1         4  people like x are hard to talk to
+vignei        1377      4  2.180102       1         4  how willing r would have x as a neighbor
+mentldoc      1376      2  1.191134       1         2  x should go to phychiatrist for help
+mhgvtdis      1376      4  1.993459       1         4  govt responsibility: provide disability benefit...
+mhhsptrt      1375      4  2.829818       1         4  x should be forced to be hospitalized for treat...
+mhnotpol      1375      4  2.738182       1         4  people like x shldn t be allowed to hold public...
+selfhelp      1375      2  1.157091       1         2  x should join a self-group with similar problem
+otcmed        1374      2  1.870451       1         2  x should take non-prescription medication
+scitext       1374      6  3.850801       1         6  what it means to r to study scienfically
+imprvown      1373      4  2.895849       1         4  how likely x s situation will improve on its own
+musthosp      1372      2  1.689504       1         2  x should be admitted to be hospitalized for tre...
+physill       1372      4  2.491254       1         4  how likely x is experiencing physical illness
+vigwork       1372      4   2.59621       1         4  how willing r would work closely with x on a job
+wayraise      1372      4  2.548834       1         4  how likely x s stuation caused by the way raised
+breakdwn      1371      4  2.355945       1         4  how likely x is experiencing nervous breakdown
+mustmed       1370      2  1.729197       1         2  x should be forced to take prescribed medicatio...
+nosun         1370      2  1.888321       1         2  true-false:the sun never shines at the south pole
+mustdoc       1369      2   1.69832       1         2  x should be forced to be examined at a clinic b...
+worda         1369      2  .8487947       0         1  word a
+wordd         1369      2  .9569028       0         1  word d
+decmoney      1368      4  2.271199       1         4  how able is x to decide managing own money
+imprvtrt      1368      4  1.577485       1         4  how likely x s situation will improve with trea...
+mhbrain       1368      4  2.454678       1         4  x s stuation caused by: brain disease
+viggrp        1367      4  2.302121       1         4  how willing r would have a group home for x
+psycmed4      1366      5  2.060029       1         5  helps people deal w day to day stresses
+psycmed5      1366      5  2.169107       1         5  makes things easier in relations
+genetics      1365      4  2.317949       1         4  how likely x s stuation caused by genetic problem
+psycmed6      1363      5  2.010271       1         5  these medications help control symptoms
+sphealer      1362      2  1.596182       1         2  x should go to spiritual healer for help
+imbalnce      1361      4  2.017634       1         4  how likely x s stuation caused by imbalance in ...
+mhmoney       1361      4  2.214548       1         4  how able is x to decide on managing own money
+mhnotch       1361      4  2.647318       1         4  people like x shldn t be allowed to teach child...
+mhsupwrk      1359      4  2.778514       1         4  people like x shldn t be allowed to supervise o...
+rxmed         1359      2  1.260486       1         2  x should take prescription medication
+mhnokids      1358      4  3.134757       1         4  people like x shldn t be allowed to have children
+mhprdctv      1356      4  2.256637       1         4  people like x are just as productive as others
+wordi         1355      2  .7512915       0         1  word i
+wordb         1354      2   .915805       0         1  word b
+hurtself      1350      4  2.162222       1         4  how likely x violent toward oneself
+mhwedrel      1350      4  2.668889       1         4  r would have x marry someone related to you
+natcity       1349      3  1.634544       1         3  solving problems of big cities
+natrace       1348      3  1.780415       1         3  improving the conditions of blacks
+psycmed7      1348      5  2.347181       1         5  helps people feel better about themselves
+vigmar        1347      4  2.788419       1         4  how willing r would have x marry in rs family
+hurtoth       1346      4  2.572808       1         4  how likely x violent toward other people
+mhtrusty      1346      4  2.092125       1         4  people like x are just as trustworthy as anyone...
+spfund        1345      3  1.992565       1         3  how fundamentalist is spouse currently
+acqjose       1344      5  1.631696       1         5  number of jose r is acquainted with
+acqmaria      1344      5  1.778274       1         5  number of maria r is acquainted with
+acqshawn      1344      5  1.936756       1         5  number of shawn r is acquainted with
+mentlhos      1344      2  1.654018       1         2  x should check into a mental hospital
+mhcause       1344      5  2.236607       1         5  what caused x s situation
+psycmed3      1344      5  2.785714       1         5  taking these medicine interferes w daily act
+acqbrnda      1343      5  1.836932       1         5  number of brenda r is acquainted with
+acqrachl      1343      5  1.779598       1         5  number of rachel r is acquainted with
+gunsdrnk      1343      2  1.090097       1         2  should carrying a firearm drinking alcohol be i...
+acqkeith      1342      5  1.825633       1         5  number of keith r is acquainted with
+mhvioslf      1342      4  2.336066       1         4  how likely x violent toward him herself
+acqkaren      1341      5   2.12006       1         5  number of karen r is acquainted with
+acqkevin      1341      5  2.061894       1         5  number of kevin r is acquainted with
+rifles50      1338      2  1.139761       1         2  should high power rifle sale be limited to mili...
+psycmed1      1336      5  3.087575       1         5  psychiatric medicine is harmful to the body
+gunsales      1333      5   1.75844       1         5  should background check be required for private...
+wordf         1333      2  .8604651       0         1  word f
+gunsdrug      1328      3  1.816265       1         3  should penality for illegal gun sale be tougher...
+natcityy      1328      3  2.136295       1         3  assistance to big cities -- version y
+worde         1326      2  .8273002       0         1  word e
+semiguns      1323      2   1.85034       1         2  should semi-auto gun sale be limited to military
+acqmyrac      1322      5  1.993192       1         5  proportion of same race as r among all aquainta...
+ortlkfm       1321     10  2.161241       1        10  in what order talk things over with family & fr...
+mhviooth      1317      4   2.81549       1         4  how likely x violent toward other people
+electron      1311      2  1.266209       1         2  sci knowledge:electrons are smaller than atoms
+natracey      1301      3  1.951576       1         3  assistance to blacks -- version y
+richwork      1299      2  1.310239       1         2  if rich, continue or stop working
+wordj         1294      2  .2758887       0         1  word j
+if04who       1285      3  1.764202       1         3  who would r has voted for in 2004 election
+timepdwk      1278      5  3.055556       1         5  time r would spend on paid work
+ownstock      1271      5  2.382376       1         5  r has stock in rs company
+balpos        1261      2  1.309278       1         2  sci research is strongly in favor of benefits
+wordg         1256      2   .383758       0         1  word g
+solarrev      1255      4  2.573705       1         4  sci knowledge:how long the earth goes around th...
+usedproz      1255      2  1.894821       1         2  have you ever taken prozac
+guns911       1252      2  1.180511       1         2  should gun control law be stricter after 911
+nanowill      1248      3  1.550481       1         3  benefit of nanotechnology outweigh harmful results
+prozfor1      1247     25  19.31836       1        97  what can you tell me about prozac is used for
+knwnproz      1237      2  1.405821       1         2  have you known anyone who took prozac
+bigbang       1223      2   1.51758       1         2  sci knowledge:the universe began with a huge ex...
+mhcreatv      1216      4  2.744243       1         4  people like x are more creative than others
+jobfind       1204      3  2.010797       1         3  could r find equally good job
+racwork       1204      5   2.11794       1         5  racial makeup of workplace
+joblose       1201      4  3.489592       1         4  is r likely to lose job
+ormntlot      1198      9  3.987479       1         9  in what order go to a therapist, or counselor
+wksups        1191      2  3.699412       3         4  does subordinate supervise anyone
+prozslf3      1190      5  3.267227       1         5  take prozac if feel depressed sleepless
+prozslf4      1188      5  2.989899       1         5  take prozac if intense fear losing control
+ortlkclr      1187      9   3.83909       1         9  in what order talk to a minister, priest, rabbi...
+prozslf1      1187      5   3.89048       1         5  take prozac if trouble in personal life
+prozslf2      1187      5  3.368155       1         5  take prozac if cant cope with stresses
+icesheet      1182      2  1.360406       1         2  true-false:the north pole is on a sheet of ice
+ormeddoc      1182      9  2.821489       1         9  in what order go to a general medical doctor
+acqattnd      1180      5  3.027966       1         5  number of relugar church attendee r is acquaint...
+lasers        1165      2  1.707296       1         2  sci knowledge:lasers work by focusing sound waves
+inuit         1164      2   1.27921       1         2  true-false:inuit live north of the arctic circle
+agewed        1161     39  23.32989      13        90  age when first married
+mhsymp        1156      4  3.050173       1         4  how much r feels sympathy for ppl with mental h...
+wordc         1153      2  .2359063       0         1  word c
+mhfright      1148      4  2.932927       1         4  how frightening most people are in public places
+wordh         1148      2  .4120209       0         1  word h
+acqdems       1147      5   2.97646       1         5  number of democrat r is acquainted with
+acqreps       1139      5  3.150132       1         5  number of republican r is acquainted with
+majorcol       861     50  27.23577       1        55  the field of degree r earned
+orslfhlp      1134     10  4.955026       1        10  in what order join a self-help group
+proz4         1129      5  2.256864       1         5  taking prozac helps people deal with stress
+proz6         1129      5  2.316209       1         5  prozac helps people control their symptoms
+proz7         1129      5  2.521701       1         5  prozac makes people feel better about themselves
+proz8         1120      5  3.715179       1         5  prozac should be taken to enhance personalities
+proz5         1115      5  2.457399       1         5  taking prozac makes relations easier
+proz1         1111      5  2.912691       1         5  prozac is harmful to the body
+proz3         1110      5  3.012613       1         5  taking prozac interferes with daily activities
+proz9         1110      5  2.263063       1         5  prozac is for those diagnosed with pression
+coldeg1        762      8  2.160105       1         8  the highest degree r have earned
+ormntldc      1089      9  3.924702       1         9  in what order go to a psychiatrist for help
+mar3          1026      5  4.604288       1         5  marital status of 3rd person
+viglab06      1021      4  1.453477       1         4  x is experiencing alchl dependence  depression ...
+dailywrk      1016      3  1.882874       1         3  how rs daily work is organized
+danger        1016      5  3.944882       1         5  how often does r work in dangerous conds
+famintjb      1016      5  3.954724       1         5  how often r fell:demand of family life interfer...
+jobsat        1016      7  2.528543       1         7  how satisfied is r with hisher job
+physwrk       1016      5  3.457677       1         5  how often must r do physical work
+worryjob      1016      4  3.320866       1         4  do you worry about losing job
+xhaustn       1016      5  2.634843       1         5  how often does work exhaust r
+jbintfam      1015      5  3.494581       1         5  how often r fell:demand of job interfere with f...
+jbtrain       1015      2  1.399015       1         2  did r have any training to improve job skill pa...
+prideorg      1015      5  1.874877       1         5  i am proud working for my firm
+rimpskls      1015      5  1.931034       1         5  job gives r chance to improve skills
+rintjob       1015      5  1.917241       1         5  rs job is interesting
+rwrkindp      1015      5  2.027586       1         5  r can work independently
+timeoff       1015      4   1.97734       1         4  how difficult r takes an hour off during workin...
+newjob        1014      4  1.561144       1         4  how helpful present work skill would be for new...
+nounemp4      1014      5  2.653846       1         5  r would accept travel longer to work to avoid ... 
+otherwrk      1014      4   1.45069       1         4  does r have any additional job
+rhiinc        1014      5  3.285996       1         5  rs income is high
+rhlpoths      1014      5  1.771203       1         5  r helps others in job
+sethours      1014      3  1.714004       1         3  who set working hours
+rhlpsoc       1013      5  1.886476       1         5  rs job is useful to society
+rpromotn      1013      5  3.085884       1         5  r has opportunity to advance
+bossemps      1011      5  2.090999       1         5  quality of mgmntemployee rels: rs firm
+helporg1      1011      5  1.915925       1         5  willing to work harder for the firm
+jobeasy       1011      5   2.89911       1         5  how easy if r find a job as good as current one
+nounemp1      1011      5  1.766568       1         5  r would accept job requiring new skill to avoi... 
+nounemp3      1011      5  2.149357       1         5  r would accept temporary employment to avoid u... 
+stayorg3      1011      5  3.228487       1         5  i would turn down job offering more pay
+useskill      1011      4  2.969337       1         4  how much past skills can you make use in present
+hrsmoney      1010      3  1.750495       1         3  r preference re: work hrs and money
+nounemp2      1010      5  2.574257       1         5  r would accept position with lower pay to avoi... 
+rsecjob       1010      5  2.188119       1         5  rs job is secure
+cowrkers      1009      5  1.824579       1         5  quality of rels among workers: rs firm
+leavejob      1008      4  2.979167       1         4  how likely will try to find aonther firm
+relate4       1007      6  3.389275       3         8  relationship of 4th person to household head
+relhh4        1007     18  25.38729       4        43  relationship of person 4 to head of household
+relhhd4       1007     16  4.781529       4        19  relation of 4th person to household head
+replaceu      1005      5  2.852736       1         5  how easy rs firm replaces r if r left
+helpoth        995      5   2.59196       1         5  to help others
+obey           995      5  3.168844       1         5  to obey
+popular        995      5  4.720603       1         5  to be well liked or popular
+thnkself       995      5  2.105528       1         5  to think for ones self
+workhard       995      5  2.413065       1         5  to work hard
+fehire         994      5  2.422535       1         5  should hire and promote women
+gender4        993      2  1.462236       1         2  gender of 4th person
+orrxmed        982      9  5.497963       1         9  in what order take prescription medication
+discaffm       974      4  2.542094       1         4  a man won't get a job or promotion
+old4           970     50  11.77526       0        88  age of 4th person
+mhclsoth       969      4  2.003096       1         4  closeness to person with mental health problem
+mhresoth       968      4  3.302686       1         4  how much responsibiiity r had for this person
+mhdisoth       967      4  2.767322       1         4  how much distress this person caused r
+mhseroth       965      4   1.77513       1         4  how serious his her mental health problem was
+if00who        963      4  1.919003       1         4  who would r has voted for in 2000 election
+fejobaff       962      4  2.803534       1         4  for or against preferential hiring of women
+mhreloth       962      4  2.384615       1         4  relationship with this person as a result of me...
+mhexpoth       961      3  1.832466       1         3  effect of experiences with this person
+discaffw       959      4  2.137643       1         4  a woman won't get a job or promotion
+mhhlpoth       957      4  2.124347       1         4  how the treatment helped him/her with mental he...
+hivtest2       931      7  2.500537       1         7  where did you have your last hiv test
+gasregs        917      5  1.413304       1         5  how much r favor requiring to make cars using l...
+eatgm          903      3  2.161683       1         3  r's view about eating genefically modified foods
+famdif16       900      5      2.31       1         5  reason not living with parents
+mhothyou       900      4      2.49       1         4  how much distress his mental health problem cau...
+polbsttx       897      5  3.501672       1         5  best policy vs narrow interest on fed inc tax:e...
+mhothrel       896      4  2.417411       1         4  result of mental health problem to relationship...
+gwsci          891      5  2.031425       1         5  understanding of global warming by environmnt s...
+gwbiz          890      5  3.655056       1         5  understanding of global warming by business lea...
+polinftx       890      4  2.264045       1         4  influence on reducing fed inc tax  by elected o...
+txbiz          890      5  2.623596       1         5  how well business leader knows effect of reduci...
+bizbsttx       889      5   3.75928       1         5  best policy vs narrow interest on fed inc tax:b...
+txpol          889      5  3.121485       1         5  how well elected official knows effect of reduc...
+bizinftx       888      4  2.503378       1         4  influence on reducing fed inc tax  by business ...
+medbstgm       888      5  2.201577       1         5  best policy on gmf vs narrow interest:medical r...
+sciinfgw       888      4  1.656532       1         4  influence on global warming policy:environmntal...
+gwpol          887      5  3.629087       1         5  understanding of global warming by elected offi...
+medinfgm       887      4  1.742954       1         4  influence on restricting gmf by medical researc...
+polinfgw       887      4  2.472379       1         4  influence on global warming policy:elected offi...
+gmpol          885      5  3.867797       1         5  how well elected official know risk by genetica...
+relsp4         885     18  26.14802       4        43  relationship of person 4 to spouse of househol
+gmbiz          884      5  3.760181       1         5  how well business leader know risk by genetical...
+polbstgm       884      5  3.511312       1         5  best policy on gmf vs narrow interest:elected o...
+polinfgm       884      4  2.754525       1         4  influence on restricting gmf by elected officials
+bizbstgm       883      5   3.90034       1         5  best policy on gmf vs narrow interest:business ...
+bizinfgm       883      4  3.089468       1         4  influence on restricting gmf by business leaders
+bizinfgw       883      4   2.82786       1         4  influence on global warming policy:business leader
+medbstsc       883      5  2.288788       1         5  best policy on stem cell vs narrow interest:med...
+scibstgw       883      5  2.083805       1         5  best policy vs narrow interest:environmental sc...
+polbstsc       882      5  3.503401       1         5  best policy on stem cell vs narrow interest:ele...
+bizbstgw       881      5  3.860386       1         5  best policy vs narrow interest:business leader
+gmmed          881      5  2.205448       1         5  how well med researcher know risk by geneticall...
+medinfsc       880      4  1.782955       1         4  influence on funding for stem cell rsch:medical...
+polbstgw       879      5  3.541524       1         5  best policy vs narrow interest:elected official
+txeco          876      5  2.353881       1         5  how well economist knows effect of reducing fed...
+ecobsttx       875      5  2.516571       1         5  best policy vs narrow interest on fed inc tax:e...
+ecoinftx       875      4  2.089143       1         4  influence on reducing fed inc tax  by economists
+relinfsc       875      4  2.922286       1         4  influence on funding for stem cell rsch:religio...
+relbstsc       873      5  3.398625       1         5  best policy on stem cell vs narrow interest:rel...
+polinfsc       872      4  2.556193       1         4  influence on funding for stem cell rsch:elected...
+scmed          872      5  1.780963       1         5  how well medical researchers understand stem cells
+hivtest1       871    232  200097.6  198001    200699  in what month and year was your last hiv test
+screlig        870      5  3.650575       1         5  how well religious leaders understand stem cells
+scpol          867      5  3.644752       1         5  how well elected officials understand stem cells
+scresrch       855      4  2.060819       1         4  government should fund stem cell research
+medagrsc       851      5   2.33725       1         5  agreement by med researchers on importance of s...
+sciagrgw       850      5  2.629412       1         5  extent of agreement on global warming amg env s...
+eth3           834     37  16.97482       1        97  3rd mentioned country of origin
+medagrgm       815      5  2.903067       1         5  med researcher:agreement on effect of genetical...
+ecoagree       811      5  3.194821       1         5  agreement by economists on effect of reducing f...
+newsprnt       781      5  2.473752       1         5  how often does r read traditional newspaper
+getaheay       775      3  1.596129       1         3  opinion of why people get ahead
+colscinm       770     27  6.055844       1        90  number of college-level sci courses r have taken
+spden          732     26  39.56421      10        70  specific denomination, spouse
+popespks       729      5  2.427984       1         5  pope is infallible on matters of faith or morals
+spwrkgvt       726      2   1.80854       1         2  spouse working for government
+spmentl        704      5  2.474432       1         5  govt spending on health
+probhlp2       696     23  878.6997     100       995  second mention to help problem
+probhlp3       696     18  949.0991     100       995  third mention to help problem
+probfix2       695     18  89.20144      22        95  second mention of problem
+probfix3       695     14  92.96691      22        95  third mention of problem
+whywkhme       695      3  1.936691       1         3  usual reason r work at home
+probhlp1       694     20  646.2651     100       980  first mention to help problem
+rowngun        693      3  1.395382       1         3  does gun belong to r
+spevwork       686      2  1.189504       1         2  spouse ever work as long as a year
+probfix1       681     20  74.34214      11        95  first mention of problem
+govmentl       679      4  1.808542       1         4  should govt provide health care for mental illness
+acqcops        674      5  2.183976       1         5  number of police officer r is acquainted with
+acqlaws        674      5  2.093472       1         5  number of lawyer r is acquainted with
+acqchild       673      5  2.005944       1         5  number of child care worker r is acquainted with
+acqmils        673      5  2.124814       1         5  number of ppl in military service r is acquaint...
+acqsocs        673      5  1.843982       1         5  number of social worker r is acquainted with
+othlang1       673     56  11.29569       1        99  what other languages does r speak
+acqelecs       672      5  2.157738       1         5  number of electrician r is acquainted with
+acqjans        671      5  1.988077       1         5  number of janitor r is acquainted with
+acqmark        671      5  2.348733       1         5  number of mark r is acquainted with
+betrlang       671      2  1.053651       1         2  which language r speaks more fluent
+getlang        671      3  1.637854       1         3  where did r learn other language
+othhome        671      2  1.615499       1         2  r speaks other language at home
+spklang        671      4  2.111773       1         4  how well does r speak other language
+acqhisp        669      5  2.683109       1         5  number of hispanic r is acquainted with
+acqlinda       669      5  2.249626       1         5  number of linda r is acquainted with
+acqwhite       669      5  4.529148       1         5  number of white r is acquainted with
+acqblack       667      5  3.008996       1         5  number of black r is acquainted with
+acqasian       664      5  2.066265       1         5  number of asian r is acquainted with
+trtlaws        661      5   1.70348       1         5  number of lawyer r trust
+trtmils        659      5  1.723824       1         5  number of ppl in military service r trust
+trtsocs        659      5  1.634294       1         5  number of social worker r trust
+trtcops        658      5  1.799392       1         5  number of police officer r trust
+trtjose        658      5  1.273556       1         5  number of  jose r trust
+trtmaria       658      5  1.346505       1         5  number of  maria r trust
+trtshawn       658      4  1.355623       1         5  number of shawn r trust
+acqprisn       657      5  1.310502       1         5  number of ppl in prison r is acquainted with
+trtmark        657      5  1.636225       1         5  number of  mark r trust
+trtkeith       656      4  1.359756       1         4  number of  keith r trust
+trtrachl       656      5  1.310976       1         5  number of  rachel r trust
+trtblack       655      5  2.250382       1         5  number of black r trust
+trtbrnda       655      4  1.372519       1         4  number of  brenda r trust
+trtchild       655      5  1.648855       1         5  number of child care worker r trust
+trthisp        655      5  1.862595       1         5  number of hispanic r trust
+trtjans        655      5  1.569466       1         5  number of janitor r trust
+trtlinda       655      4  1.621374       1         4  number of  linda r trust
+trtasian       654      5  1.611621       1         5  number of asian r trust
+trtelecs       654      5  1.688073       1         5  number of electrician r trust
+trtkaren       654      5  1.539755       1         5  number of karen r trust
+trtkevin       654      3  1.409786       1         3  number of kevin r trust
+trtmyrac       652      5  1.904908       1         5  proportion of same race as r among ppl r trust
+trtwhite       652      5  3.842025       1         5  number of white r trust
+trtprisn       650      5  1.104615       1         5  number of ppl in prison  r trust
+extr2005       642      2  1.244548       1         2  received performance based payment in 2005
+acqgay         640      5  2.171875       1         5  number of gay r is acquainted with
+indperf        639      2  1.276995       1         2  size of perf based pay depend on individual
+trtgay         637      5  1.684458       1         5  number of gay r trust
+acqhome        636      5   1.97956       1         5  number of ppl owning second home r is acquainte...
+acqunemp       636      5  2.246855       1         5  number of ppl currently unemployed r is acquain...
+compperf       635      2  1.177953       1         2  size of perf based pay depend on profits
+deptperf       633      2  1.442338       1         2  size of perf based pay depend on workgroup
+trthome        633      5  1.761453       1         5  number of ppl owning second home  r trust
+trtcohab       630      5  1.831746       1         5  number of cohabiting ppl r trust
+acqcohab       627      5  2.441786       1         5  number of cohabiting ppl  r is acquainted with
+trtunemp       625      5    1.7056       1         5  number of ppl unemployed r trust
+acqgoatt       618      5  3.961165       1         5  number of regular church attendee r is acquaint...
+trtgoatt       610      5  3.365574       1         5  number of church attendee  r trust
+acqnoatt       602      5  3.883721       1         5  number of non church attendee r is acquainted with
+trtnoatt       591      5  3.142132       1         5  number of non church attendee  r trust
+other          574     72  55.69512       3       180  other protestant denominations
+trtattnd       574      5   2.95993       1         5  proportion of regular church attendee r trust
+trtreps        561      5   3.26738       1         5  proportion of republican r trust
+trtdems        559      5  3.110912       1         5  proportion of democrat r trust
+acqcon         555      5  3.576577       1         5  number of strong conservative r is acquainted with
+nanoknw1       546      2  1.115385       1         2  true-false:nanotechnology manipulate extremely ...
+acqlib         544      5  3.373162       1         5  number of strong liberal r is acquainted with
+trtcon         543      5  2.918969       1         5  number of strong conservative  r trust
+trtlib         538      5  2.752788       1         5  number of strong liberal  r trust
+orhealer       537     10  6.057728       1        10  in what order go to a spiritual or a natural he...
+acqfmblk       507      5  1.859961       1         5  number of black family member
+acqfmhsp       507      5  1.613412       1         5  number of hispanic family member
+acqfmlin       507      4  1.489152       1         4  number of family member named linda
+acqfmmrk       506      3  1.452569       1         3  number of family member named mark
+acqfmwht       506      5  4.280632       1         5  number of white family member
+acqfmasn       504      5  1.313492       1         5  number of asian family member
+acqfmpri       499      5  1.216433       1         5  number of family member in prison
+evjob          499      2  1.114228       1         2  have you ever had a paid job for 1 year or+
+adforjob       498      3  1.058233       1         3  advertised for a job in newspapers
+appemps        498      3  1.253012       1         3  applied directly to employers
+lookjob        498      2  1.829317       1         2  are you looking for a job
+priagncy       498      3  1.074297       1         3  registered at a private employment agancy
+pubagncy       498      3  1.118474       1         3  registered at a public employment agancy
+wantads        498      3  1.218876       1         3  answered advertisements for jobs
+askhelp        497      3  1.273642       1         3  asked relatives friends colleagues to help
+wantjob2       497      2  1.442656       1         2  would like to have a job now or in the future
+acqvalin       495      5  1.684848       1         5  number of linda in voluntary association
+econsup        495      7  3.276768       1         7  main source of economic support
+skltrain       492      2  1.878049       1         2  r had job skill training in the  past 12 months
+acqfmgay       491      5  1.454175       1         5  number of gay family member
+acqfmhme       491      5  1.757637       1         5  number of family member owning second home
+acqnhlin       491      4  1.293279       1         4  number of linda in neighborhood
+acqnhmrk       491      4  1.274949       1         4  number of mark in neighborhood
+acqvamrk       491      5  1.625255       1         5  number of mark in voluntary association
+acqvablk       489      5  2.595092       1         5  number of black in voluntary association
+acqvahsp       488      5  2.245902       1         5  number of hispanic in voluntary association
+acqvawht       486      5   4.09465       1         5  number of white in voluntary association
+getjob         486      4  2.444444       1         4  how likely you would find a job
+acqnhwht       484      5  4.115702       1         5  number of white in neighborhood
+acqfmune       482      5   1.90249       1         5  number of unemployed family member
+acqvaasn       481      5  1.841996       1         5  number of asian in voluntary association
+stockops       479      2   1.74739       1         2  r hold any stock options of rs company
+acqwklin       478      5  1.728033       1         5  number of linda in current or previous work
+acqfmgo        477      5  3.815514       1         5  number of family member going church regularly
+acqwkmrk       476      5  1.754202       1         5  number of mark in current or previous work
+acqfmcoh       475      5  1.728421       1         5  number of cohabiting family member
+acqnhblk       475      5  2.214737       1         5  number of black in neighborhood
+acqnhhsp       471      5  1.868365       1         5  number of hispanic in neighborhood
+acqwkblk       467      5  2.912206       1         5  number of black in current or previous work
+acqwkwht       466      5  4.341202       1         5  number of white in current or previous work
+acqnhasn       465      5  1.505376       1         5  number of asian in neighborhood
+acqfmno        462      5  3.714286       1         5  number of family member not going church
+acqvapri       462      5  1.181818       1         5  number of ppl in prison in voluntary association
+acqwkhsp       462      5  2.549784       1         5  number of hispanic in current or previous work
+acqwkasn       461      5  2.023861       1         5  number of asian in current or previous work
+ormntlhs       450     10       6.6       1        10  in what order check into a mental hospital
+acqnhpri       444      4  1.128378       1         5  number of ppl in prison in neighborhood
+acqvagay       437      5  1.745995       1         5  number of gay in voluntary association
+yrjobend       434     48  1995.797    1926      2006  when did your last paid job end
+whyjbend       432      9   4.37963       1         9  main reason your job end
+acqwkpri       430      4  1.148837       1         5  number of ppl in prison in current or previous ...
+mar4           428      4   4.71028       1         5  marital status of 4th person
+acqnhhme       423      5  1.451537       1         5  number of ppl owning second home in neighborhood
+relate5        423      6  3.444444       3         8  relationship of 5th person to household head
+relhh5         423     15  25.23404       3        43  relationship of person 5 to head of household
+relhhd5        423     13   4.70922       3        19  relation of 5th person to household head
+acqnhgay       419      5  1.446301       1         5  number of gay in neighborhood
+acqnhune       419      5  1.806683       1         5  number of ppl unemployed in neighborhood
+acqvahme       417      5  1.748201       1         5  number of ppl owning second home in voluntary a...
+nanoknw2       417      2  1.194245       1         2  true-false:nanoscale differ from same material ...
+gender5        416      2  1.495192       1         2  gender of 5th person
+acqwkgay       415      5  1.963855       1         5  number of gay in current or previous work
+acqvaune       414      5  1.891304       1         5  number of unemployed ppl in voluntary association
+old5           410     39  10.21463       0        95  age of 5th person
+acqntsex       407      2  1.746929       1         2  r had sex with acquaintance last year
+acqwkune       407      5  1.697789       1         5  number of ppl unemployed in current or previous...
+frndsex        407      2  1.238329       1         2  r had sex with friend last year
+pikupsex       407      2  1.638821       1         2  r had sex with casual date last year
+acqvacoh       406      5  2.076355       1         5  number of cohabiting ppl in voluntary association
+acqwkhme       406      5  1.746305       1         5  number of ppl owning second home in current or ...
+paidsex        406      2  1.972906       1         2  r had sex for pay last year
+acqvago        405      5  3.538272       1         5  number of regular church attendee in voluntary ...
+acqfmcon       404      5  3.344059       1         5  number of consevative in family member
+othersex       402      2  1.915423       1         2  r had sex with some other last year
+acqfmlib       399      5  2.857143       1         5  number of liberal in family member
+extraval       397     90  6265.549       0    125000  total dollar value of pay in 2001
+medcare2       396      4  2.106061       1         4  who r thinks should be next most responsible fo...
+acqnhcoh       389      5   1.59126       1         5  number of cohabiting ppl in neighborhood
+acqnhgo        385      5  3.124675       1         5  number of regular church attendee in neighborhood
+acqvano        378      5  3.174603       1         5  number of non church attendee in voluntary asso...
+acqwkcoh       378      5  2.248677       1         5  number of cohabiting ppl in current or previous...
+relsp5         371     15  25.88949       4        43  relationship of person 5 to spouse of househol
+acqwkgo        363      5  3.473829       1         5  number of regular church attendee in current or...
+acqnhno        361      5  3.180055       1         5  number of non church attendee in neighborhood
+acqvacon       355      5  3.135211       1         5  number of conservative in voluntary association
+acqvalib       351      5  2.923077       1         5  number of liberal in voluntary association
+oth16          348     52  52.68966       8       166  other protestant denominations
+acqwkno        344      5   3.55814       1         5  number of non church attendee in current or pre...
+acqwkcon       331      5  3.410876       1         5  number of strong conservative in current or pre...
+acqnhcon       324      5  2.777778       1         5  number of conservative in neighborhood
+acqnhlib       317      5  2.548896       1         5  number of liberal in neighborhood
+acqwklib       316      5  3.196203       1         5  number of strong liberal in current or previous...
+spanint        277      2  1.851986       1         2  if no spanish, r could have been interviewed in...
+spanself       277      3  2.592058       1         3  if this interview had only been available in en...
+prozfor2       259     25  13.46332       2        34  what can you tell me about prozac is used for
+racecen2       236     14  4.228814       1        16  what is rs race 2nd mention
+intrace2       216      6  4.935185       1        16  interviewer s race2
+buyvalue       194     24  47.00515       0       100  percent of company stock r bought from own money
+numemps        509     31  3.410609       0        97  number of employee for the self-employed
+spother        188     41  51.20213       7       103  other protestant denominations
+spklangw       178      4  2.561798       1         4  how well r speaks the language in betrlang
+orotcmed       169     10  5.982249       1        10  in what order take non-prescription medication
+othlang2       171     44  21.53801       1        99  what other languages does r speak
+crack30        163      4  3.361963       1         4  r last use crack cocaine
+stockval       154     51  48232.26       0    900000  total dollar value of rs stock
+relate6        152      5  3.638158       3         8  relationship of 6th person to household head
+relhh6         152     13  22.20395       3        43  relationship of person 6 to head of household
+relhhd6        152     10  4.861842       3        18  relation of 6th person to household head
+gender6        148      2  1.486486       1         2  gender of 6th person
+old6           148     29  9.060811       0        84  age of 6th person
+othguns        141      3   1.12766       1         3  number of adult owing a gun in household
+mar5           139      5  4.769784       1         5  marital status of 5th person
+relsp6         132     12  23.78788       4        43  relationship of person 6 to spouse of househol
+balneg         126      2  1.690476       1         2  sci research is strongly in favor of harmful re...
+ops2005        116      2  1.422414       1         2  company granted r stock options in 2005
+yearval         99     39  8004.263       0    500000  total dollar value of payments in that year
+idu30           96      4  3.572917       1         4  r inject drugs in past 30 days
+hrs2            83     24  39.03614       5        70  number of hours usually work a week
+extrayr         77     10  2002.312    1980      2004  year of the most recent perf based payments
+jew             76      4  2.671053       1         4  what sort of jew r is
+jew16           55      4       2.4       1         4  what sort of jew r was at age 16
+relate7         53      5  3.754717       3         8  relationship of 7th person to household head
+relhh7          53     11  22.79245       4        43  relationship of person 7 to head of household
+relhhd7         53      8  5.245283       4        18  relation of 7th person to household head
+gender7         52      2  1.423077       1         2  gender of 7th person
+old7            51     20  8.882353       0        82  age of 7th person
+relsp7          49     11        23       4        43  relationship of person 7 to spouse of househol
+gender11        48      2     1.375       1         2  gender of 11th person (visitor)
+relate11        48      6  5.979167       3         8  relation of 11th person (visitor) to head
+relhh11         48     16  16.66667       3        43  relationship of person 11 to head of household
+relhhd11        48     14  9.645833       3        19  relation of 11th person (visitor) to head
+mar11           47      5  3.680851       1         5  marital status of 11th person (visitor)
+old11           45     26  32.26667       1        75  age of 11th person (visitor)
+away3           42      1         1       1         1  is 3rd person staying somewhere else now?
+prozfor3        42     16  20.33333       6        34  what can you tell me about prozac is used for
+where3          42      4  2.428571       1         4  where is 3rd person staying?
+away2           39      1         1       1         1  is 2nd person staying somewhere else now?
+where2          39      4  2.230769       1         4  where is 2nd person staying?
+spjew           32      4   2.59375       1         4  what sort of jew is rs spouse currently
+mar6            31      3  4.387097       1         5  marital status of 6th person
+racecen3        29      7  3.206897       1        15  what is rs race 3rd mention
+relsp11         26     12  18.07692       4        43  relationship of person 11 to spouse of househo
+sphrs2          24      8     42.25      20        89  no. of hrs spouse usually works a week
+away4           22      1         1       1         1  is 4th person staying somewhere else now?
+where4          22      3  2.181818       1         3  where is 4th person staying?
+relate8         15      4       3.6       3         7  relationship of 8th person to household head
+relhh8          15      6  19.66667       4        42  relationship of person 8 to head of household
+relhhd8         15      4       4.8       4        12  relation of 8th person to household head
+gender8         14      2       1.5       1         2  gender of 8th person
+old8            14     10  11.85714       0        70  age of 8th person
+relsp8          13      8  19.92308       4        43  relationship of person 8 to spouse of househol
+gender12        12      2      1.75       1         2  gender of 12th person (visitor)
+mar7            12      2  4.666667       1         5  marital status of 7th person
+old12           12     11  39.83333       0        74  age of 12th person (visitor)
+relate12        12      6  5.833333       3         8  relation of 12th person (visitor) to head
+relhh12         12      8  15.66667       5        41  relationship of person 12 to head of household
+relhhd12        12      8       9.5       4        17  relation of 12th person (visitor) to head
+away1           11      1         1       1         1  is 1st person staying somewhere else now?
+mar12           11      3  2.363636       1         5  marital status of 12th person (visitor)
+where1          11      4  2.090909       1         4  where is 1st person staying?
+relsp12          8      8    19.875       6        43  relationship of person 12 to spouse of househo
+intrace3         7      4  8.142857       1        16  interviewer s race3
+away11           6      1         1       1         1  is 11th person (visitor) staying elsewhere now?
+where11          6      2         2       1         3  where is 11th person (visitor) staying?
+away5            5      1         1       1         1  is 5th person staying somewhere else now?
+gender9          5      2       1.6       1         2  gender of 9th person
+old9             5      4         4       1         8  age of 9th person
+relate9          5      2       4.2       3         5  relationship of 9th person to household head
+relhh9           5      3        12       4        41  relationship of person 9 to head of household
+relhhd9          5      2       4.6       4         5  relation of 9th person to household head
+where5           5      4       2.4       1         4  where is 5th person staying?
+mar8             4      2      4.25       2         5  marital status of 8th person
+relsp9           4      3     13.75       4        41  relationship of person 9 to spouse of househol
+gender10         3      1         1       1         1  gender of 10th person
+old10            3      3  3.666667       0         7  age of 1oth person
+relate10         3      2  4.333333       3         5  relationship of 10th person to household head
+relhh10          3      2  4.666667       4         5  relationship of person 10 to head of household
+relhhd10         3      2  4.666667       4         5  relation of 1oth person to household head
+relsp10          3      2  4.666667       4         5  relationship of person 10 to spouse of househo
+gender13         2      1         2       2         2  gender of 13th person (visitor)
+old13            2      2         9       7        11  age of 13th person (visitor)
+relate13         2      2         6       5         7  relation of 13th person (visitor) to head
+relhh13          2      2         8       5        11  relationship of person 13 to head of household
+relhhd13         2      2         8       5        11  relation of 13th person (visitor) to head
+relsp13          2      2      14.5      11        18  relationship of person 13 to spouse of househo
+away12           1      1         1       1         1  is 12th person (visitor) staying elsewhere now?
+away6            1      1         1       1         1  is 6th person staying somewhere else now?
+away7            1      1         1       1         1  is 7th person staying somewhere else now?
+gender14         1      1         2       2         2  gender of 14th person (visitor)
+old14            1      1         3       3         3  age of 14th person (visitor)
+relate14         1      1         7       7         7  relation of 14th person (visitor) to head
+relhh14          1      1        11      11        11  relationship of person 14 to head of household
+relhhd14         1      1        11      11        11  relation of 14th person (visitor) to head
+relsp14          1      1        11      11        11  relationship of person 14 to spouse of househo
+where12          1      1         3       3         3  where is 12th person (visitor) staying?
+where6           1      1         3       3         3  where is 6th person staying?
+where7           1      1         3       3         3  where is 7th person staying?
+---------------------------------------------------------------------------------------------------------
+
+. 
