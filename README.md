@@ -82,3 +82,10 @@ For pkg-config to find readline you may need to set:
 
 ### Google Trends: https://trends.google.com/trends/explore?date=today%205-y&geo=US&q=dress%20shirts
   - Can search different keywords
+
+
+# Other useful tips/resources...
+
+```py
+os.system('pip install pycountry-convert')
+```
