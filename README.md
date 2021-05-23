@@ -68,3 +68,17 @@ For compilers to find readline you may need to set:
 
 For pkg-config to find readline you may need to set:
   export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
+
+
+
+## For Arend: fashion-related datasets:
+
+### E-Commerce Data: https://www.kaggle.com/carrie1/ecommerce-data
+  - Kaggle retail data downloadable
+
+### Pockets: https://pudding.cool/2018/08/pockets/
+  - GitHub: https://github.com/the-pudding/data/tree/master/pockets
+    + `measurements.csv` Includes many variables (categorical and continuous), ie: measurements, style, brand, menWomen, name, fabric, price
+
+### Google Trends: https://trends.google.com/trends/explore?date=today%205-y&geo=US&q=dress%20shirts
+  - Can search different keywords
