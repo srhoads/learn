@@ -83,6 +83,8 @@ For pkg-config to find readline you may need to set:
 ### Google Trends: https://trends.google.com/trends/explore?date=today%205-y&geo=US&q=dress%20shirts
   - Can search different keywords
 
+https://www.kaggle.com/rmisra/clothing-fit-dataset-for-size-recommendation
+
 
 # Other useful tips/resources...
 
