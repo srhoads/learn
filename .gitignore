@@ -130,3 +130,8 @@ dmypy.json
 .DS_Store
 courses/data_analysis_python/lab1/lab 1 updated.html
 courses/data_analysis_python/lab5/forbes-billionaires-of-2021-20.zip
+.Rproj.user
+
+
+.idea/*
+__pycache__/dash_reusable_components.cpython-36.pyc
