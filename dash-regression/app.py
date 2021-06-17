@@ -1,5 +1,11 @@
+''' # IF U WANNA SOURCE THIS FILE:   
+import os; os.system("source venv/bin/activate;")
+'''
 import os, json, re
 from textwrap import dedent
+import pandas as pd
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
 
 import dash
 import dash_core_components as dcc
@@ -34,14 +40,15 @@ app.layout = html.Div([
     html.Div(style={'background-color': 'rgb(39, 229, 185)'}),
 
     html.Div(className="banner", 
-    style={'background-color': '#371466',},
+    style={'background-color': 'rgb(9, 0, 77)',},
     children=[
         html.Div(className='container scalable', children=[
             html.Span(html.A(
-                'Regression Explorer',
-                href='https://github.com/plotly/dash-regression',
+                "Arend's Riveting Regression Explorer",
+                href='/',
+                # href='https://github.com/plotly/dash-regression',
                 className='col-4',
-                style={'text-decoration': 'none', 'color': 'white', 'background-color': '#311466', 'font-size':'25pt'}
+                style={'text-decoration': 'none', 'color': 'white', 'font-size':'25pt', 'font-weight':'bold'}
             )),
             html.A(
                 html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-7.jpg", style={'height':'145px'}),
@@ -344,7 +351,11 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
             contours=dict(coloring='lines'),
         )
     else:
-        X, y = make_dataset(dataset, RANDOM_STATE)
+        # dataset.to_csv('dataset.csv', index=False)
+        X, y = make_dataset(dataset, RANDOM_STATE) # dataset = pd.DataFrame(data)
+        # pd.DataFrame(X).to_csv('X.csv', index=False); pd.DataFrame(y).to_csv('y.csv', index=False)
+        # X = pd.read_csv('X.csv'); y = pd.read_csv('y.csv')
+
         X_train, X_test, y_train, y_test = \
             train_test_split(X, y, test_size=100, random_state=RANDOM_STATE)
 
@@ -354,7 +365,7 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
     # print(X_test.shape, y_test.shape)
 
     # Create Polynomial Features
-    poly = PolynomialFeatures(degree=degree)
+    poly = PolynomialFeatures(degree=degree) #degree=1
     X_train_poly = poly.fit_transform(X_train)
     X_test_poly = poly.fit_transform(X_test)
     poly_range = poly.fit_transform(X_range)
@@ -368,12 +379,20 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
     # elif model_name == 'elastic_net':
     #     model = ElasticNet(alpha=alpha, l1_ratio=1 - l2_ratio, normalize=True)
     if model_name == 'logit':
-        model = LogisticRegression(normalize=False)
+        # model = LogisticRegression()
+        model = LinearRegression(normalize=False)
     else:
         model = LinearRegression(normalize=True)
 
     # Train model and predict
-    model.fit(X_train_poly, y_train)
+    try:
+        model.fit(X_train_poly, y_train)
+    except:
+        # model.fit(X_train, y_train)
+        # logit1 = sm.formula.logit(formula = "exh ~ hrs1 + age + prestg80 + babies", subset=(sub['wrkstat']==1), data = sub).fit()
+        # logit1 = sm.formula.logit(formula = "exh ~ hrs1 + age + prestg80 + babies", subset=(sub['wrkstat']==1), data = sub).fit()
+        import statsmodels.discrete as smd
+        # smd.discrete_model.Logit(X_train, y_train, check_rank=True)
     y_pred_range = model.predict(poly_range)
     test_score = model.score(X_test_poly, y_test)
     test_error = mean_squared_error(y_test, model.predict(X_test_poly))
@@ -406,7 +425,7 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
 
     layout = go.Layout(
         title=f"Score: {test_score:.3f}, MSE: {test_error:.3f} (Test Data)",
-        legend=dict(orientation='h', bgcolor="#9d1466",),
+        legend=dict(orientation='h', bgcolor="transparent",),
         margin=dict(l=25, r=25),
         hovermode='closest',
         paper_bgcolor='rgb(49, 0, 0)',
