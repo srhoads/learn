@@ -4,6 +4,7 @@ import os; os.system("source venv/bin/activate;")
 import os, json, re
 from textwrap import dedent
 import pandas as pd
+from plotly.graph_objs.graph_objs import XAxis
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
@@ -95,14 +96,14 @@ app.layout = html.Div([
             children=[
 
                 html.Div(
-                    className='four columns col-4 py-0 my-0', 
+                    className='four columns col-2 py-0 my-0', 
                     style={'font-weight': 'bold',},
                     children=drc.NamedDropdown(
                         name='Select Dataset',
                         id='dropdown-dataset',
                         options=[
                             {'label': 'Billionaires Data', 'value': 'billionaires'},
-                            {'label': 'Example Data: X.csv, y.csv', 'value': 'example_data'},
+                            {'label': 'Example X, y', 'value': 'example_data'},
                             {'label': 'Custom Data', 'value': 'custom'},
                             {'label': 'Arctan Curve', 'value': 'tanh'},
                             # {'label': 'Boston (LSTAT Attribute)', 'value': 'boston'},
@@ -118,14 +119,14 @@ app.layout = html.Div([
                 ),
 
                 html.Div(
-                    className='four columns col-4 py-0 my-0', 
+                    className='four columns col-2 py-0 my-0', 
                     style={'font-weight': 'bold',},
                     children=drc.NamedDropdown(
                         name='Select Model',
                         id='dropdown-select-model',
                         options=[
                             {'label': 'Linear Regression', 'value': 'linear'},
-                            {'label': 'Logit', 'value': 'logit'},
+                            {'label': 'Logit (Not Accurate Yet)', 'value': 'logit'},
                             {'label': 'Lasso', 'value': 'lasso'},
                             {'label': 'Ridge', 'value': 'ridge'},
                             {'label': 'Elastic Net', 'value': 'elastic_net'},
@@ -136,10 +137,56 @@ app.layout = html.Div([
                 )),
 
                 html.Div(
-                    className='four columns col-4 py-0 my-0', 
+                    className='four columns col-sm-2 py-0 my-0', 
                     style={'font-weight': 'bold',},
                     children=drc.NamedDropdown(
-                        name='Click Mode (Select Custom Data to enable)',
+                        name='X (Independent Var)',
+                        id='dropdown-select-X',
+                        options=[
+                            {'label': 'Age', 'value': 'Age'},
+                            {'label': 'Children', 'value': 'Children'},
+                            {'label': 'Rank', 'value': 'Rank'},
+                            {'label': 'NetWorth', 'value': 'NetWorth'},
+                            {'label': 'Self_made', 'value': 'Self_made'},
+                            {'label': 'In a Relationship?', 'value': 'Status'},
+                            {'label': 'Education', 'value': 'Education'},
+                            # {'label': 'Country (USA=1)', 'value': 'Country'},
+                            # {'label': 'Citizenship (USA=1)', 'value': 'Citizenship'},
+                            # {'label': 'Continent (NAm=1)', 'value': 'ContinentNA'},
+                        ],
+                        value='Age',
+                        searchable=False,
+                        clearable=False
+                )),
+
+                html.Div(
+                    className='four columns col-sm-2 py-0 my-0', 
+                    style={'font-weight': 'bold',},
+                    children=drc.NamedDropdown(
+                        name='Y (Dependent Var)',
+                        id='dropdown-select-y',
+                        options=[
+                            {'label': 'NetWorth', 'value': 'NetWorth'},
+                            {'label': 'Rank', 'value': 'Rank'},
+                            {'label': 'Age', 'value': 'Age'},
+                            {'label': 'Children', 'value': 'Children'},
+                            {'label': 'Self_made', 'value': 'Self_made'},
+                            {'label': 'In a Relationship?', 'value': 'Status'},
+                            {'label': 'Education', 'value': 'Education'},
+                            # {'label': 'Country (USA=1)', 'value': 'Country'},
+                            # {'label': 'Citizenship (USA=1)', 'value': 'Citizenship'},
+                            # {'label': 'Continent (NAm=1)', 'value': 'ContinentNA'},
+                        ],
+                        value='NetWorth',
+                        searchable=False,
+                        clearable=False
+                )),
+
+                html.Div(
+                    className='four columns col-3 py-0 my-0', 
+                    style={'font-weight': 'regular',},
+                    children=drc.NamedDropdown(
+                        name='Click Mode (For Custom Data Only)',
                         id='dropdown-custom-selection',
                         options=[
                             {'label': 'Add Training Data', 'value': 'training'},
@@ -158,10 +205,10 @@ app.layout = html.Div([
             style={'background-color': 'rgb(40, 210, 13)',},
          ),
 
-         html.Div(
-            className='container.scalable', 
-            style={'background-color': 'rgb(20, 25, 46)',},
-         ),
+        #  html.Div(
+        #     className='container.scalable', 
+        #     style={'background-color': 'rgb(20, 25, 46)',},
+        #  ),
 
          html.Div(
             className='container.scalable', 
@@ -236,7 +283,7 @@ app.layout = html.Div([
         dcc.Graph(
             id='graph-regression-display',
             className='row py-0',
-            style={'height': 'calc(100vh - 280px)', 'background-color': 'rgb(9, 9, 26)',},
+            style={'height': 'calc(100vh - 300px)', 'background-color': 'rgb(9, 9, 26)',},
             config={'modeBarButtonsToRemove': [
                 'pan2d',
                 'lasso2d',
@@ -251,7 +298,7 @@ app.layout = html.Div([
 ], style={'background-color': 'rgb(9, 9, 21)',},)
 
 
-def make_dataset(name, random_state):
+def make_dataset(name, random_state, Xvar, yvar):
     np.random.seed(random_state)
 
     if name in ['sin', 'log', 'exp', 'tanh']:
@@ -281,9 +328,34 @@ def make_dataset(name, random_state):
         # xlfile = archive.open(filename)
         # df = pd.read_csv(xlfile)
         df = pd.read_csv('https://raw.githubusercontent.com/srhoads/learn/main/data/forbes-billionaires-of-2021-20/forbes_billionaires.csv')
-        Xvar = "Age"
-        yvar = "NetWorth"
-        Xy = df[[Xvar,yvar]].dropna().query(Xvar+'!=0 and '+yvar+'!=0 and '+Xvar+'!=1 and '+yvar+'!=1')
+        # Xvar = "Age"
+        # yvar = "NetWorth"
+        if Xvar == yvar:
+            # yvar = df.drop(columns=[Xvar]).columns[1]
+            df[yvar+'_y'] = df[yvar]
+            yvar = yvar+'_y'
+        Xy = df[[Xvar,yvar]].dropna().reset_index(drop=True)#.query(Xvar+'!=0 and '+yvar+'!=0 and '+Xvar+'!=1 and '+yvar+'!=1')
+        if 'Status' in [Xvar, yvar]:
+            Xy.Status = Xy.Status.astype(str).replace({'(Widowed$|Separated|Single|Divorced).*':0, '(Widowed,|In|Married|Engaged|Remarried).*':1}, regex=True).replace({'nan': np.nan})
+            Xy[yvar] = Xy.Status if 'Status' in yvar else Xy[yvar]
+        if 'Education' in [Xvar, yvar]:
+            # Xy.Education.str.replace(",.*", '', regex=True).value_counts()
+            # Xy.Education = 
+            education_recode_0 = Xy.Education.astype(str).apply(lambda s: re.sub('.*(Bachelor|Doctorate|Ph(\\.|)D|Master|Diploma|Drop Out.*(High|Univ|Coll)|MBA|High School Graduate|Associate|LLM|LLB|Law Degree|Chartered Accountant|Registered Nurse|Medical Doctor|Doctor of).*', '\\1', s))
+            education_recode_0.value_counts()
+            education_recode_1 = education_recode_0.apply(lambda s: re.sub('.*(College|University|Business School|Teacher School).*', '\\1', s)).replace('Drop Out.*(High|Coll|Univ|Law|Inst).*', 'DropOut \\1', regex=True)
+            education_recode_1.value_counts()
+            education_recode_2 = education_recode_1.replace({'.*(Doctor|Ph(\\.|)|Law Degree).*':'Doctorate','.*(College|Bachelor|University|LLB).*':'Bachelor','.*(Associate|Nurse|Chartered Accountant).*':'Associate', '.*(Business School|Master|LLM|MBA).*':'Master', '.*(Diploma|High School|Teacher School).*':'Diploma', 'DropOut.*(Univ|Coll|Inst|Law).*':'BachelorDropout', 'DropOut.*(High).*':'DiplomaDropout'}, regex=True)
+            education_recode_2.value_counts()
+            education_recode_3 = education_recode_2.replace({'DiplomaDropout':1, 'Diploma':2, 'BachelorDropout':3, 'Associate':4, 'Bachelor':5, 'Master':6, 'Doctorate':7}, regex=True)
+            education_recode_3.value_counts()
+            # Xy[Xy.Education.str.contains('Drop')]
+            # df[df.Education.astype(str).str.contains('^High School$')]
+            # education_recode_1[education_recode_1.str.contains('Drop')].value_counts()
+            Xy.Education = education_recode_3
+            Xy[yvar] = education_recode_3 if 'Education' in yvar else Xy[yvar]
+        Xy[Xvar], uniquesX = pd.factorize(Xy[Xvar]) if not str(Xy[Xvar].dtype) in ['float64', 'int64'] else (Xy[Xvar], Xy[Xvar].unique())
+        Xy[yvar], uniquesY = pd.factorize(Xy[yvar]) if not str(Xy[yvar].dtype) in ['float64', 'int64'] else (Xy[yvar], Xy[yvar].unique())
         # Xy = df[[Xvar,yvar]].dropna().apply(lambda c: c*1000 if 'NetWorth' in c.name else c).query(Xvar+'!=0 and '+yvar+'!=0 and '+Xvar+'!=1 and '+yvar+'!=1')
         # X = [[s] for s in Xy[Xvar].tolist()]
         X = Xy[Xvar].to_numpy().reshape(-1, 1)
@@ -375,9 +447,11 @@ def update_custom_storage(clickData, selection, data, dataset):
                Input('slider-polynomial-degree', 'value'),
                Input('slider-alpha', 'value'),
                Input('dropdown-select-model', 'value'),
+               Input('dropdown-select-X', 'value'),
+               Input('dropdown-select-y', 'value'),
                Input('slider-l1-l2-ratio', 'value'),
                Input('custom-data-storage', 'children')])
-def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data):
+def update_graph(dataset, degree, alpha_power, model_name, Xvar, yvar, l2_ratio, custom_data):
     # Generate base data
     if dataset == 'custom':
         custom_data = json.loads(custom_data)
@@ -399,7 +473,7 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
         )
     else:
         # dataset.to_csv('dataset.csv', index=False)
-        X, y = make_dataset(dataset, RANDOM_STATE) # dataset = pd.DataFrame(data)
+        X, y = make_dataset(dataset, RANDOM_STATE, Xvar, yvar) # dataset = pd.DataFrame(data)
         # pd.DataFrame(X).to_csv('X.csv', index=False); pd.DataFrame(y).to_csv('y.csv', index=False)
         # X = pd.read_csv('X.csv'); y = pd.read_csv('y.csv')
 
@@ -478,10 +552,12 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
     layout = go.Layout(
         title=f"Score: {test_score:.3f}, MSE: {test_error:.3f} (Test Data)",
         legend=dict(orientation='h', bgcolor="transparent",yanchor='top',y=1.035, font=dict(color='rgb(169, 172, 186)')),
-        margin=dict(t=45, r=25, b=45, l=25),
+        margin=dict(t=45, r=25, b=35, l=45),
         hovermode='closest',
         paper_bgcolor='rgb(49, 0, 0)',
         plot_bgcolor='rgb(66, 0, 0)',
+        xaxis = dict(title="<b>"+Xvar+"</b>", titlefont=dict(color='rgb(169, 172, 186)', size="15")),
+        yaxis = dict(title="<b>"+yvar+"</b>", titlefont=dict(color='rgb(169, 172, 186)', size="15")),
         # bgcolor='#9d4342',
         # opacity=0.5,
     )
