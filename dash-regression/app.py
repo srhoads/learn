@@ -78,7 +78,7 @@ app.layout = html.Div([
 
         html.Div(style={'background-color': 'rgb(55, 8, 85)',},),
 
-        html.Div(className='btn-group rounded px-3 py-3 col-12', 
+        html.Div(className='btn-group rounded px-3 py-2 col-12', 
             style={'background-color': 'rgb(35, 34, 69)',},
             children=[
                 html.Div(className='four columns col-4', 
@@ -160,7 +160,7 @@ app.layout = html.Div([
          ),
 
         html.Div(
-            className=' col-10 py-3', 
+            className=' col-10 pb-1', 
             style={'background-color': 'rgb(9, 9, 26)', 'width':'120%'},
             children=[
                 html.Div(className='six columns', children=drc.NamedSlider(
@@ -208,8 +208,8 @@ app.layout = html.Div([
 
         dcc.Graph(
             id='graph-regression-display',
-            className='row',
-            style={'height': 'calc(100vh - 160px)', 'background-color': 'rgb(210, 210, 61)',},
+            className='row py-2',
+            style={'height': 'calc(100vh - 290px)', 'background-color': 'rgb(9, 9, 26)',},
             config={'modeBarButtonsToRemove': [
                 'pan2d',
                 'lasso2d',
