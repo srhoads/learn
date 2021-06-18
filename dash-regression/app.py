@@ -12,10 +12,10 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
 import numpy as np
-from sklearn.datasets import make_regression, load_boston
+from sklearn.datasets import make_regression#, load_boston
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
-from sklearn.linear_model import LinearRegression, LogisticRegression#, Lasso, Ridge, ElasticNet
+from sklearn.linear_model import LinearRegression, LogisticRegression, Lasso#, Ridge, ElasticNet
 from sklearn.preprocessing import PolynomialFeatures
 from dash.dependencies import Input, Output, State
 
@@ -43,6 +43,14 @@ app.layout = html.Div([
     style={'background-color': 'rgb(9, 0, 77)',},
     children=[
         html.Div(className='container scalable', children=[
+            html.A(
+                html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg", style={'height':'145px'}),
+                # html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-7.jpg", style={'height':'145px'}),
+                # html.Img(src="https://www.sji.edu.sg/qql/slot/u560/News%20and%20Events/News%20Highlights/2011/photos/arend%2019.jpg", style={'height':'120px'}),
+                # html.Img(src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/logo/new-branding/dash-logo-by-plotly-stripe-inverted.png"),
+                href='/'
+                # href='https://plot.ly/products/dash/'
+            ),
             html.Span(html.A(
                 "Arend's Riveting Regression Explorer",
                 href='/',
@@ -50,13 +58,6 @@ app.layout = html.Div([
                 className='col-4',
                 style={'text-decoration': 'none', 'color': 'white', 'font-size':'25pt', 'font-weight':'bold'}
             )),
-            html.A(
-                html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-7.jpg", style={'height':'145px'}),
-                # html.Img(src="https://www.sji.edu.sg/qql/slot/u560/News%20and%20Events/News%20Highlights/2011/photos/arend%2019.jpg", style={'height':'120px'}),
-                # html.Img(src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/logo/new-branding/dash-logo-by-plotly-stripe-inverted.png"),
-                href='/'
-                # href='https://plot.ly/products/dash/'
-            )
         ]),
     ]),
 
@@ -88,7 +89,9 @@ app.layout = html.Div([
                     id='dropdown-dataset',
                     options=[
                         {'label': 'Arctan Curve', 'value': 'tanh'},
-                        {'label': 'Boston (LSTAT Attribute)', 'value': 'boston'},
+                        # {'label': 'Boston (LSTAT Attribute)', 'value': 'boston'},
+                        {'label': 'Billionaires Data', 'value': 'billionaires'},
+                        {'label': 'Example Data: X.csv, y.csv', 'value': 'example_data'},
                         {'label': 'Custom Data', 'value': 'custom'},
                         {'label': 'Exponential Curve', 'value': 'exp'},
                         {'label': 'Linear Curve', 'value': 'linear'},
@@ -108,7 +111,7 @@ app.layout = html.Div([
                 options=[
                     {'label': 'Linear Regression', 'value': 'linear'},
                     {'label': 'Logit', 'value': 'logit'},
-                    # {'label': 'Lasso', 'value': 'lasso'},
+                    {'label': 'Lasso', 'value': 'lasso'},
                     # {'label': 'Ridge', 'value': 'ridge'},
                     # {'label': 'Elastic Net', 'value': 'elastic_net'},
                 ],
@@ -159,11 +162,19 @@ app.layout = html.Div([
             style={'background-color': 'rgb(19, 125, 43)',},
          ),
 
+        #  html.Span(
+        #      'Polynomial Degree',
+        #      className='col-2 pb-0 pt-0 my-0', 
+        #      style={'font-weight': 'bold'},
+        #  ),
+
         html.Div(
-            className=' col-10 pb-1', 
-            style={'background-color': 'rgb(9, 9, 26)', 'width':'120%'},
+            className='col-12 pb-1 pt-0 mt-0', 
+            style={'background-color': 'rgb(9, 9, 26)', 'width':'100%'},
             children=[
-                html.Div(className='six columns', children=drc.NamedSlider(
+                html.Div(className='six columns py-0 my-0 small', 
+                style={'font-weight': 'bold'},
+                children=drc.NamedSlider(
                     name='Polynomial Degree',
                     id='slider-polynomial-degree',
                     min=1,
@@ -242,9 +253,25 @@ def make_dataset(name, random_state):
             y = np.tanh(X) + np.random.normal(0, 0.15, X.shape)
         return X.reshape(-1, 1), y
 
-    elif name == 'boston':
-        X = load_boston().data[:, -1].reshape(-1, 1)
-        y = load_boston().target
+    # elif name == 'boston':
+    #     X = load_boston().data[:, -1].reshape(-1, 1)
+    #     y = load_boston().target
+    #     return X, y
+    elif name == 'billionaires':
+
+        # os.system('kaggle datasets download alexanderbader/forbes-billionaires-of-2021-20/forbes_billionaires.csv')
+        # import zipfile 
+        # archive = zipfile.ZipFile('forbes-billionaires-of-2021-20.zip')
+        # filename = archive.filelist[0].filename
+        # xlfile = archive.open(filename)
+        # df = pd.read_csv(xlfile)
+        X = pd.read_csv('X.csv')
+        y = pd.read_csv('y.csv')
+        return X, y
+        
+    elif name == 'example_data':
+        X = pd.read_csv('X.csv')
+        y = pd.read_csv('y.csv')
         return X, y
 
     else:
@@ -372,8 +399,8 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
 
     # Select model
     alpha = 10 ** alpha_power
-    # if model_name == 'lasso':
-    #     model = Lasso(alpha=alpha, normalize=True)
+    if model_name == 'lasso':
+        model = Lasso(alpha=alpha, normalize=True)
     # elif model_name == 'ridge':
     #     model = Ridge(alpha=alpha, normalize=True)
     # elif model_name == 'elastic_net':
@@ -388,10 +415,11 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
     try:
         model.fit(X_train_poly, y_train)
     except:
+        None
         # model.fit(X_train, y_train)
         # logit1 = sm.formula.logit(formula = "exh ~ hrs1 + age + prestg80 + babies", subset=(sub['wrkstat']==1), data = sub).fit()
         # logit1 = sm.formula.logit(formula = "exh ~ hrs1 + age + prestg80 + babies", subset=(sub['wrkstat']==1), data = sub).fit()
-        import statsmodels.discrete as smd
+        # import statsmodels.discrete as smd
         # smd.discrete_model.Logit(X_train, y_train, check_rank=True)
     y_pred_range = model.predict(poly_range)
     test_score = model.score(X_test_poly, y_test)
@@ -425,8 +453,8 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
 
     layout = go.Layout(
         title=f"Score: {test_score:.3f}, MSE: {test_error:.3f} (Test Data)",
-        legend=dict(orientation='h', bgcolor="transparent",),
-        margin=dict(l=25, r=25),
+        legend=dict(orientation='h', bgcolor="transparent",yanchor='top',y=1.035, font=dict(color='rgb(169, 172, 186)')),
+        margin=dict(t=45, r=25, b=45, l=25),
         hovermode='closest',
         paper_bgcolor='rgb(49, 0, 0)',
         plot_bgcolor='rgb(66, 0, 0)',
