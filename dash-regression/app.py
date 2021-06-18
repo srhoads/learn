@@ -150,6 +150,10 @@ app.layout = html.Div([
                             {'label': 'Self_made', 'value': 'Self_made'},
                             {'label': 'In a Relationship?', 'value': 'Status'},
                             {'label': 'Education', 'value': 'Education'},
+                            {'label': 'Country (USA=1)', 'value': 'Country_US'},
+                            {'label': 'Country (China=1)', 'value': 'Country_CN'},
+                            {'label': 'Continent_AS', 'value': 'Continent_AS'},
+                            {'label': 'Continent_NA', 'value': 'Continent_NA'},
                             # {'label': 'Country (USA=1)', 'value': 'Country'},
                             # {'label': 'Citizenship (USA=1)', 'value': 'Citizenship'},
                             # {'label': 'Continent (NAm=1)', 'value': 'ContinentNA'},
@@ -173,7 +177,10 @@ app.layout = html.Div([
                             {'label': 'Self_made', 'value': 'Self_made'},
                             {'label': 'In a Relationship?', 'value': 'Status'},
                             {'label': 'Education', 'value': 'Education'},
-                            # {'label': 'Country (USA=1)', 'value': 'Country'},
+                            {'label': 'Country (USA=1)', 'value': 'Country_US'},
+                            {'label': 'Country (China=1)', 'value': 'Country_CN'},
+                            {'label': 'Continent_AS', 'value': 'Continent_AS'},
+                            {'label': 'Continent_NA', 'value': 'Continent_NA'},
                             # {'label': 'Citizenship (USA=1)', 'value': 'Citizenship'},
                             # {'label': 'Continent (NAm=1)', 'value': 'ContinentNA'},
                         ],
@@ -327,7 +334,7 @@ def make_dataset(name, random_state, Xvar, yvar):
         # filename = archive.filelist[0].filename
         # xlfile = archive.open(filename)
         # df = pd.read_csv(xlfile)
-        df = pd.read_csv('https://raw.githubusercontent.com/srhoads/learn/main/data/forbes-billionaires-of-2021-20/forbes_billionaires.csv')
+        df = pd.read_csv('https://raw.githubusercontent.com/srhoads/learn/main/data/forbes-billionaires-of-2021-20/forbes_billionaires_new.csv')
         # Xvar = "Age"
         # yvar = "NetWorth"
         if Xvar == yvar:
