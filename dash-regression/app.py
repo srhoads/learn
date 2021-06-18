@@ -15,7 +15,7 @@ import numpy as np
 from sklearn.datasets import make_regression#, load_boston
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
-from sklearn.linear_model import LinearRegression, LogisticRegression, Lasso#, Ridge, ElasticNet
+from sklearn.linear_model import LinearRegression, LogisticRegression, Lasso, Ridge, ElasticNet
 from sklearn.preprocessing import PolynomialFeatures
 from dash.dependencies import Input, Output, State
 
@@ -44,19 +44,29 @@ app.layout = html.Div([
     children=[
         html.Div(className='container scalable', children=[
             html.A(
-                html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg", style={'height':'145px'}),
+                html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg", style={"height":"250px", "margin-top":"-35px", "margin-bottom":"-103px", "margin-right":"-100px"}),
+                # html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg", style={"height":"250px", "margin-top":"-35px", "margin-bottom":"-100px", "margin-right":"-100px"}),
+                # style={"background-color":'rgb(9, 0, 77)', 'margin-right':'100px'},
+                # html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg", style={"height":"145px", "margin":"-60px -60px -10px -30px", "background-position":"center"}),
+                # html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg", style={"height":"145px", "margin":"-20px", "background-position":"center"}),
+                # html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg", style={"background-image":"url('https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg')", "width":"200px", "margin":"-20px", "background-position":"center"}),
+                # style={"background-image":"url('https://i.stack.imgur.com/wPh0S.jpg')", "width":"200px", "height":"100px", "background-position":"center"},
                 # html.Img(src="https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-7.jpg", style={'height':'145px'}),
                 # html.Img(src="https://www.sji.edu.sg/qql/slot/u560/News%20and%20Events/News%20Highlights/2011/photos/arend%2019.jpg", style={'height':'120px'}),
                 # html.Img(src="https://s3-us-west-1.amazonaws.com/plotly-tutorials/logo/new-branding/dash-logo-by-plotly-stripe-inverted.png"),
                 href='/'
                 # href='https://plot.ly/products/dash/'
             ),
+            # html.Span(
+            #     "arend",
+            #     style={"background-image":"url('https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg')", "width":"40px", "height":"30px", "background-position":"center", 'font-size':'54pt'}
+            # ),
             html.Span(html.A(
                 "Arend's Riveting Regression Explorer",
                 href='/',
                 # href='https://github.com/plotly/dash-regression',
                 className='col-4',
-                style={'text-decoration': 'none', 'color': 'white', 'font-size':'25pt', 'font-weight':'bold'}
+                style={'text-decoration': 'none', 'color': 'white', 'font-size':'25pt', 'font-weight':'bold',"background-color":'rgb(9, 0, 77)','height':'250px', 'padding-top':'100px', 'padding-bottom':'50px'}
             )),
         ]),
     ]),
@@ -79,62 +89,68 @@ app.layout = html.Div([
 
         html.Div(style={'background-color': 'rgb(55, 8, 85)',},),
 
-        html.Div(className='btn-group rounded px-3 py-2 col-12', 
+        html.Div(
+            className='btn-group rounded px-3 pt-1 pb-2 col-12', 
             style={'background-color': 'rgb(35, 34, 69)',},
             children=[
-                html.Div(className='four columns col-4', 
-                # style={'background-color': 'rgb(4, 2, 62)',},
-                children=drc.NamedDropdown(
-                    name='Select Dataset',
-                    id='dropdown-dataset',
-                    options=[
-                        {'label': 'Arctan Curve', 'value': 'tanh'},
-                        # {'label': 'Boston (LSTAT Attribute)', 'value': 'boston'},
-                        {'label': 'Billionaires Data', 'value': 'billionaires'},
-                        {'label': 'Example Data: X.csv, y.csv', 'value': 'example_data'},
-                        {'label': 'Custom Data', 'value': 'custom'},
-                        {'label': 'Exponential Curve', 'value': 'exp'},
-                        {'label': 'Linear Curve', 'value': 'linear'},
-                        {'label': 'Log Curve', 'value': 'log'},
-                        {'label': 'Sine Curve', 'value': 'sin'},
-                    ],
-                    value='linear',
-                    clearable=False,
-                    searchable=False
-            )),
 
-            html.Div(className='four columns col-4', 
-            style={'background-color': 'rgb(35, 34, 69)',},
-            children=drc.NamedDropdown(
-                name='Select Model',
-                id='dropdown-select-model',
-                options=[
-                    {'label': 'Linear Regression', 'value': 'linear'},
-                    {'label': 'Logit', 'value': 'logit'},
-                    {'label': 'Lasso', 'value': 'lasso'},
-                    # {'label': 'Ridge', 'value': 'ridge'},
-                    # {'label': 'Elastic Net', 'value': 'elastic_net'},
-                ],
-                value='linear',
-                searchable=False,
-                clearable=False
-            )),
+                html.Div(
+                    className='four columns col-4 py-0 my-0', 
+                    style={'font-weight': 'bold',},
+                    children=drc.NamedDropdown(
+                        name='Select Dataset',
+                        id='dropdown-dataset',
+                        options=[
+                            {'label': 'Billionaires Data', 'value': 'billionaires'},
+                            {'label': 'Example Data: X.csv, y.csv', 'value': 'example_data'},
+                            {'label': 'Custom Data', 'value': 'custom'},
+                            {'label': 'Arctan Curve', 'value': 'tanh'},
+                            # {'label': 'Boston (LSTAT Attribute)', 'value': 'boston'},
+                            {'label': 'Exponential Curve', 'value': 'exp'},
+                            {'label': 'Linear Curve', 'value': 'linear'},
+                            {'label': 'Log Curve', 'value': 'log'},
+                            {'label': 'Sine Curve', 'value': 'sin'},
+                        ],
+                        value='billionaires',
+                        clearable=False,
+                        searchable=False
+                    )
+                ),
 
-            html.Div(className='four columns', 
-            style={'background-color': 'rgb(35, 34, 69)',},
-            children=drc.NamedDropdown(
-                name='Click Mode (Select Custom Data to enable)',
-                id='dropdown-custom-selection',
-                options=[
-                    {'label': 'Add Training Data', 'value': 'training'},
-                    {'label': 'Add Test Data', 'value': 'test'},
-                    {'label': 'Remove Data point', 'value': 'remove'},
-                    {'label': 'Do Nothing', 'value': 'nothing'},
-                ],
-                value='training',
-                clearable=False,
-                searchable=False
-            )),
+                html.Div(
+                    className='four columns col-4 py-0 my-0', 
+                    style={'font-weight': 'bold',},
+                    children=drc.NamedDropdown(
+                        name='Select Model',
+                        id='dropdown-select-model',
+                        options=[
+                            {'label': 'Linear Regression', 'value': 'linear'},
+                            {'label': 'Logit', 'value': 'logit'},
+                            {'label': 'Lasso', 'value': 'lasso'},
+                            {'label': 'Ridge', 'value': 'ridge'},
+                            {'label': 'Elastic Net', 'value': 'elastic_net'},
+                        ],
+                        value='linear',
+                        searchable=False,
+                        clearable=False
+                )),
+
+                html.Div(
+                    className='four columns col-4 py-0 my-0', 
+                    style={'font-weight': 'bold',},
+                    children=drc.NamedDropdown(
+                        name='Click Mode (Select Custom Data to enable)',
+                        id='dropdown-custom-selection',
+                        options=[
+                            {'label': 'Add Training Data', 'value': 'training'},
+                            {'label': 'Add Test Data', 'value': 'test'},
+                            {'label': 'Remove Data point', 'value': 'remove'},
+                            {'label': 'Do Nothing', 'value': 'nothing'},
+                        ],
+                        value='training',
+                        clearable=False,
+                        searchable=False
+                )),
         ]),
 
          html.Div(
@@ -169,7 +185,7 @@ app.layout = html.Div([
         #  ),
 
         html.Div(
-            className='col-12 pb-1 pt-0 mt-0', 
+            className='col-12 pb-3 pt-0 mt-0', 
             style={'background-color': 'rgb(9, 9, 26)', 'width':'100%'},
             children=[
                 html.Div(className='six columns py-0 my-0 small', 
@@ -219,8 +235,8 @@ app.layout = html.Div([
 
         dcc.Graph(
             id='graph-regression-display',
-            className='row py-2',
-            style={'height': 'calc(100vh - 290px)', 'background-color': 'rgb(9, 9, 26)',},
+            className='row py-0',
+            style={'height': 'calc(100vh - 280px)', 'background-color': 'rgb(9, 9, 26)',},
             config={'modeBarButtonsToRemove': [
                 'pan2d',
                 'lasso2d',
@@ -258,15 +274,20 @@ def make_dataset(name, random_state):
     #     y = load_boston().target
     #     return X, y
     elif name == 'billionaires':
-
         # os.system('kaggle datasets download alexanderbader/forbes-billionaires-of-2021-20/forbes_billionaires.csv')
         # import zipfile 
         # archive = zipfile.ZipFile('forbes-billionaires-of-2021-20.zip')
         # filename = archive.filelist[0].filename
         # xlfile = archive.open(filename)
         # df = pd.read_csv(xlfile)
-        X = pd.read_csv('X.csv')
-        y = pd.read_csv('y.csv')
+        df = pd.read_csv('https://raw.githubusercontent.com/srhoads/learn/main/data/forbes-billionaires-of-2021-20/forbes_billionaires.csv')
+        Xvar = "Age"
+        yvar = "NetWorth"
+        Xy = df[[Xvar,yvar]].dropna().query(Xvar+'!=0 and '+yvar+'!=0 and '+Xvar+'!=1 and '+yvar+'!=1')
+        # Xy = df[[Xvar,yvar]].dropna().apply(lambda c: c*1000 if 'NetWorth' in c.name else c).query(Xvar+'!=0 and '+yvar+'!=0 and '+Xvar+'!=1 and '+yvar+'!=1')
+        # X = [[s] for s in Xy[Xvar].tolist()]
+        X = Xy[Xvar].to_numpy().reshape(-1, 1)
+        y = Xy[yvar].to_numpy()
         return X, y
         
     elif name == 'example_data':
@@ -275,8 +296,7 @@ def make_dataset(name, random_state):
         return X, y
 
     else:
-        return make_regression(n_samples=300, n_features=1, noise=20,
-                               random_state=random_state)
+        return make_regression(n_samples=300, n_features=1, noise=20, random_state=random_state)
 
 
 def format_coefs(coefs):
@@ -401,13 +421,17 @@ def update_graph(dataset, degree, alpha_power, model_name, l2_ratio, custom_data
     alpha = 10 ** alpha_power
     if model_name == 'lasso':
         model = Lasso(alpha=alpha, normalize=True)
-    # elif model_name == 'ridge':
-    #     model = Ridge(alpha=alpha, normalize=True)
-    # elif model_name == 'elastic_net':
-    #     model = ElasticNet(alpha=alpha, l1_ratio=1 - l2_ratio, normalize=True)
+    elif model_name == 'ridge':
+        model = Ridge(alpha=alpha, normalize=True)
+    elif model_name == 'elastic_net':
+        model = ElasticNet(alpha=alpha, l1_ratio=1 - l2_ratio, normalize=True)
     if model_name == 'logit':
         # model = LogisticRegression()
-        model = LinearRegression(normalize=False)
+        # X = X[2:-2]
+        # y = np.array(y[2:-2]) # Getting rid of 0 and 1 values
+        # y = np.log((1 / y) - 1)
+        y_train = np.log(y_train)
+        model = LinearRegression(normalize=False, fit_intercept=False)
     else:
         model = LinearRegression(normalize=True)
 
