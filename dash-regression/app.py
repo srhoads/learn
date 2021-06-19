@@ -22,7 +22,14 @@ from dash.dependencies import Input, Output, State
 
 import dash_reusable_components as drc
 
-RANDOM_STATE = 718
+RANDOM_STATE = 212
+
+def unlist(l):
+    flat_list = []
+    for sublist in l:
+        for item in sublist:
+            flat_list.append(item)
+    return flat_list
 
 app = dash.Dash(__name__)
 server = app.server
@@ -62,13 +69,19 @@ app.layout = html.Div([
             #     "arend",
             #     style={"background-image":"url('https://www.redsports.sg/wp-content/uploads/2015/05/adiv-rugby-sf-acsi-ri-6.jpg')", "width":"40px", "height":"30px", "background-position":"center", 'font-size':'54pt'}
             # ),
-            html.Span(html.A(
-                "Arend's Riveting Regression Explorer",
-                href='/',
-                # href='https://github.com/plotly/dash-regression',
-                className='col-4',
-                style={'text-decoration': 'none', 'color': 'white', 'font-size':'25pt', 'font-weight':'bold',"background-color":'rgb(9, 0, 77)','height':'250px', 'padding-top':'100px', 'padding-bottom':'50px'}
-            )),
+            html.Span(children=[
+                html.A(
+                    "Arend's Billionaire Regression Explorer",
+                    className='col-9',
+                    href='/', # href='https://github.com/plotly/dash-regression',
+                    style={'text-decoration': 'none', 'color': 'white', 'font-size':'24pt', 'font-weight':'bold',"background-color":'rgb(9, 0, 77)','height':'250px', 'padding-top':'100px', 'padding-bottom':'50px'}
+                ),
+                # html.Br(),
+                # html.Span("Characteristics of the World's Billionaires!")
+                ],
+                # html.Br(),
+                # className='col-4',
+            ),
         ]),
     ]),
 
@@ -154,6 +167,7 @@ app.layout = html.Div([
                             {'label': 'Country (China=1)', 'value': 'Country_CN'},
                             {'label': 'Continent_AS', 'value': 'Continent_AS'},
                             {'label': 'Continent_NA', 'value': 'Continent_NA'},
+                            {'label': 'Continent_EU', 'value': 'Continent_EU'},
                             # {'label': 'Country (USA=1)', 'value': 'Country'},
                             # {'label': 'Citizenship (USA=1)', 'value': 'Citizenship'},
                             # {'label': 'Continent (NAm=1)', 'value': 'ContinentNA'},
@@ -181,6 +195,8 @@ app.layout = html.Div([
                             {'label': 'Country (China=1)', 'value': 'Country_CN'},
                             {'label': 'Continent_AS', 'value': 'Continent_AS'},
                             {'label': 'Continent_NA', 'value': 'Continent_NA'},
+                            {'label': 'Continent_EU', 'value': 'Continent_EU'},
+                            {'label': 'Continent_OC', 'value': 'Continent_OC'},
                             # {'label': 'Citizenship (USA=1)', 'value': 'Citizenship'},
                             # {'label': 'Continent (NAm=1)', 'value': 'ContinentNA'},
                         ],
@@ -334,7 +350,11 @@ def make_dataset(name, random_state, Xvar, yvar):
         # filename = archive.filelist[0].filename
         # xlfile = archive.open(filename)
         # df = pd.read_csv(xlfile)
+        # df = pd.read_csv('https://raw.githubusercontent.com/srhoads/learn/main/data/forbes-billionaires-of-2021-20/forbes_billionaires_new.csv', keep_default_na=False).apply(lambda y: y.apply(lambda s: np.nan if str(s)=="" else s))
         df = pd.read_csv('https://raw.githubusercontent.com/srhoads/learn/main/data/forbes-billionaires-of-2021-20/forbes_billionaires_new.csv')
+        # str(df.Age.dtype)
+        # df.apply(lambda y: y.str.replace('^$', np.nan, regex=True) if str(y.dtype)=='object' else y)
+        # df.apply(lambda y: y.apply(lambda s: np.nan if str(s)=="" else s))
         # Xvar = "Age"
         # yvar = "NetWorth"
         if Xvar == yvar:
@@ -414,19 +434,42 @@ def disable_custom_selection(dataset):
     return dataset != 'custom'
 
 @app.callback(Output('custom-data-storage', 'children'),
-              [Input('graph-regression-display', 'clickData')],
+              [Input('graph-regression-display', 'clickData'),
+               Input('dropdown-select-X', 'value'),
+               Input('dropdown-select-y', 'value')],
               [State('dropdown-custom-selection', 'value'),
                State('custom-data-storage', 'children'),
                State('dropdown-dataset', 'value')])
-def update_custom_storage(clickData, selection, data, dataset):
+def update_custom_storage(clickData, Xvar, yvar , selection, data, dataset):
     if data is None:
+        print('data is None', data)
+        df = pd.read_csv('https://raw.githubusercontent.com/srhoads/learn/main/data/forbes-billionaires-of-2021-20/forbes_billionaires_new.csv', keep_default_na=False).apply(lambda y: y.apply(lambda s: np.nan if str(s)=="" else s))
+        if Xvar == yvar:
+            df[yvar+'_y'] = df[yvar]
+            yvar = yvar+'_y'
+        Xy = df[[Xvar,yvar]].dropna().reset_index(drop=True)#.query(Xvar+'!=0 and '+yvar+'!=0 and '+Xvar+'!=1 and '+yvar+'!=1')
+        if 'Status' in [Xvar, yvar]:
+            Xy.Status = Xy.Status.astype(str).replace({'(Widowed$|Separated|Single|Divorced).*':0, '(Widowed,|In|Married|Engaged|Remarried).*':1}, regex=True).replace({'nan': np.nan})
+            Xy[yvar] = Xy.Status if 'Status' in yvar else Xy[yvar]
+        if 'Education' in [Xvar, yvar]:
+            education_recode_0 = Xy.Education.astype(str).apply(lambda s: re.sub('.*(Bachelor|Doctorate|Ph(\\.|)D|Master|Diploma|Drop Out.*(High|Univ|Coll)|MBA|High School Graduate|Associate|LLM|LLB|Law Degree|Chartered Accountant|Registered Nurse|Medical Doctor|Doctor of).*', '\\1', s))
+            education_recode_1 = education_recode_0.apply(lambda s: re.sub('.*(College|University|Business School|Teacher School).*', '\\1', s)).replace('Drop Out.*(High|Coll|Univ|Law|Inst).*', 'DropOut \\1', regex=True)
+            education_recode_2 = education_recode_1.replace({'.*(Doctor|Ph(\\.|)|Law Degree).*':'Doctorate','.*(College|Bachelor|University|LLB).*':'Bachelor','.*(Associate|Nurse|Chartered Accountant).*':'Associate', '.*(Business School|Master|LLM|MBA).*':'Master', '.*(Diploma|High School|Teacher School).*':'Diploma', 'DropOut.*(Univ|Coll|Inst|Law).*':'BachelorDropout', 'DropOut.*(High).*':'DiplomaDropout'}, regex=True)
+            education_recode_3 = education_recode_2.replace({'DiplomaDropout':1, 'Diploma':2, 'BachelorDropout':3, 'Associate':4, 'Bachelor':5, 'Master':6, 'Doctorate':7}, regex=True)
+            Xy.Education = education_recode_3
+            Xy[yvar] = education_recode_3 if 'Education' in yvar else Xy[yvar]
+        Xy[Xvar], uniquesX = pd.factorize(Xy[Xvar]) if not str(Xy[Xvar].dtype) in ['float64', 'int64'] else (Xy[Xvar], Xy[Xvar].unique())
+        Xy[yvar], uniquesY = pd.factorize(Xy[yvar]) if not str(Xy[yvar].dtype) in ['float64', 'int64'] else (Xy[yvar], Xy[yvar].unique())
+        X = Xy[Xvar].to_numpy().reshape(-1, 1)
+        y = Xy[yvar].to_numpy()
         data = {
-            'train_X': [1, 2],
-            'train_y': [1, 2],
-            'test_X': [3, 4],
-            'test_y': [3, 4],
+            'train_X': Xy[Xvar].tolist(),
+            'train_y': Xy[yvar].tolist(),
+            'test_X': Xy[Xvar].tolist(),
+            'test_y': Xy[yvar].tolist(),
         }
     else:
+        # print('data:\n', data)
         data = json.loads(data)
         if clickData and dataset == 'custom':
             selected_X = clickData['points'][0]['x']
@@ -468,6 +511,7 @@ def update_graph(dataset, degree, alpha_power, model_name, Xvar, yvar, l2_ratio,
         y_test = np.array(custom_data['test_y'])
         X_range = np.linspace(-5, 5, 300).reshape(-1, 1)
         X = np.concatenate((X_train, X_test))
+        y = np.concatenate((y_train, y_test))
 
         trace_contour = go.Contour(
             x=np.linspace(-5, 5, 300),
@@ -483,12 +527,9 @@ def update_graph(dataset, degree, alpha_power, model_name, Xvar, yvar, l2_ratio,
         X, y = make_dataset(dataset, RANDOM_STATE, Xvar, yvar) # dataset = pd.DataFrame(data)
         # pd.DataFrame(X).to_csv('X.csv', index=False); pd.DataFrame(y).to_csv('y.csv', index=False)
         # X = pd.read_csv('X.csv'); y = pd.read_csv('y.csv')
-
         X_train, X_test, y_train, y_test = \
             train_test_split(X, y, test_size=100, random_state=RANDOM_STATE)
-
         X_range = np.linspace(X.min() - 0.5, X.max() + 0.5, 300).reshape(-1, 1)
-
     # print(X_train.shape, y_train.shape)
     # print(X_test.shape, y_test.shape)
 
@@ -519,16 +560,43 @@ def update_graph(dataset, degree, alpha_power, model_name, Xvar, yvar, l2_ratio,
     # Train model and predict
     try:
         model.fit(X_train_poly, y_train)
+        y_pred_range = model.predict(poly_range)
+        test_score = model.score(X_test_poly, y_test)
+        test_error = mean_squared_error(y_test, model.predict(X_test_poly))
     except:
         None
-        # model.fit(X_train, y_train)
+        # import statsmodels.api as sm
+        # import statsmodels.formula.api as smf
+        # # smf.ols(formula = yvar+'~'+Xvar, data=pd.DataFrame({'X':X, 'y':y})).fit().summary()
+        # model = smf.ols(formula = 'y ~ X', data=pd.DataFrame({'X':unlist(X.tolist()), 'y':y}))
+        # model_fit = model.fit()
+        # model_fit.summary()
+        # pvalue = round(model_fit.pvalues[1], 3)
+
+    try:
+        import statsmodels.api as sm
+        import statsmodels.formula.api as smf
+        # polyFormula = '^'+str(degree) if degree>1 else ''
+        # lm = smf.ols(formula = 'y ~ X'+polyFormula, data=pd.DataFrame({'X':unlist(X.tolist()), 'y':y}))
+        lm = smf.ols(formula = 'y ~ X', data=pd.DataFrame({'X':unlist(X.tolist()), 'y':y}))
+
+        Xp = poly.fit_transform(X)
+        lm = sm.OLS(y, Xp)
+
+        lm_fit = lm.fit()
+        # lm_fit.summary()
+        pvalue = lm_fit.pvalues[1]
+        coeff = lm_fit.params[1]
+        n_obs = len(lm_fit.fittedvalues)
+    except Exception as e:
+        print('ERROR lm:', e)
+        pvalue = 1
+        coeff = 0
+        n_obs = 0
         # logit1 = sm.formula.logit(formula = "exh ~ hrs1 + age + prestg80 + babies", subset=(sub['wrkstat']==1), data = sub).fit()
         # logit1 = sm.formula.logit(formula = "exh ~ hrs1 + age + prestg80 + babies", subset=(sub['wrkstat']==1), data = sub).fit()
         # import statsmodels.discrete as smd
         # smd.discrete_model.Logit(X_train, y_train, check_rank=True)
-    y_pred_range = model.predict(poly_range)
-    test_score = model.score(X_test_poly, y_test)
-    test_error = mean_squared_error(y_test, model.predict(X_test_poly))
 
     # Create figure
     trace0 = go.Scatter(
@@ -557,7 +625,7 @@ def update_graph(dataset, degree, alpha_power, model_name, Xvar, yvar, l2_ratio,
         data.insert(0, trace_contour)
 
     layout = go.Layout(
-        title=f"Score: {test_score:.3f}, MSE: {test_error:.3f} (Test Data)",
+        title=f"<i style='font-size: 8pt'>Full Data:</i> N: {n_obs:.0f}, Coefficient: {coeff:.3f}, P-Value: {pvalue:.3f} | <i style='font-size: 8pt'>Test Data Only: </i> Score: {test_score:.3f}, MSE: {test_error:.2f}",
         legend=dict(orientation='h', bgcolor="transparent",yanchor='top',y=1.035, font=dict(color='rgb(169, 172, 186)')),
         margin=dict(t=45, r=25, b=35, l=45),
         hovermode='closest',

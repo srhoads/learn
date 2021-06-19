@@ -56,7 +56,9 @@ df_new = pd.concat([df_new, continent_dummies], axis=1)
 
 country_dummies = pd.get_dummies(df_new.country_code, prefix='Country')
 df_new = pd.concat([df_new, country_dummies[['Country_US', 'Country_CN']]], axis=1)
+df_new.continent = df_new.continent.replace('NA', 'NAm', regex=False)
 
-df_new.to_csv("data/forbes-billionaires-of-2021-20/forbes_billionaires_new.csv")
+df_new.to_csv("data/forbes-billionaires-of-2021-20/forbes_billionaires_new.csv", index=False)
 
 # df_new = pd.read_csv("https://raw.githubusercontent.com/srhoads/learn/main/data/forbes-billionaires-of-2021-20/forbes_billionaires.csv")
+df_new.Age.describe()
